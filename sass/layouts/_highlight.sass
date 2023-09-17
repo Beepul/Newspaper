@@ -1,0 +1,27 @@
+.highlight
+    margin-bottom: $s-60
+    .small_news_wrap
+        +flex
+        +flex-dir(column)
+        .small_news_card:last-child
+            padding: $s-32 0 0 0
+            border-bottom: 0 
+        .small_news_card
+            border-bottom: 1px solid $text-tertiary
+            padding: $s-32 0
+            +flex
+            +flex-dir(column)
+            gap: $s-32
+            +sm 
+                +flex-dir(row)
+            .news__card__img,figure
+                margin: 0
+                flex: 1
+            .news_content
+                flex: 1
+                .news_heading
+                    margin-bottom: $s-12 - $s-6
+    .widget.widget_newspaper_author_bio_widget
+        margin-top: $s-48
+        .wp-block-heading
+            margin: $s-20 0

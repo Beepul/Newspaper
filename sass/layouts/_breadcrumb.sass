@@ -1,0 +1,52 @@
+.breadcrumb-wrapper
+    background-image: url('../assets/images/breadcrumb.jpg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    padding: $s-48 0
+    // margin-bottom: $s-48
+    // min-height: 100px
+    // max-height: 253px
+    // height: 160px 
+    // +md 
+    //     height: 190px
+    // +lg 
+    //     height: 253px
+    .container
+        @extend %display-center
+        +flex-dir(column)
+        gap: $s-32
+        height: 100%
+        .entry-title
+            color: $white
+            text-transform: uppercase
+            font-size: $font-40 
+            text-align: center
+            +sm 
+                font-size: $font-48
+        #crumbs, a 
+            color: $white
+            @extend %bold
+            text-transform: uppercase
+            &:hover
+                opacity: 0.8
+        #crumbs
+            +flex 
+            +flex-align(center)
+            gap: $s-12
+            flex-wrap: wrap
+            padding: $s-16 
+            background: rgba(255, 255, 255, 0.12)
+            span 
+                +flex 
+                +flex-align(center)
+                gap: $s-12
+        #crumbs>span:first-child
+            &::before
+                content: ''
+                background-image: url('../assets/icons/home.svg')
+                background-repeat: no-repeat
+                background-size: 24px 
+                height: 24px 
+                width: 24px 
+                display: inline-block

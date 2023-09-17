@@ -1,0 +1,55 @@
+.gallery
+    .gallery_tab_wrap
+        .section__heading
+            flex-wrap: wrap
+            .gallery-tabs
+                padding: $s-12 0
+                +sm 
+                    padding: 0
+        .gallery_wrapper
+            .gallery_item
+                .single_news_wrap
+                    img 
+                        // min-height: 363px
+                        height: 230px
+                    .news__img__content
+                        padding: $s-16
+                        .bottom
+                            gap: 0
+                            .title
+                                margin: $s-8 0
+    .widget_wrapper
+        +flex
+        +flex-dir(column)
+        gap: 0
+        +md 
+            +flex-dir(row)
+            gap: $s-24
+        +lg 
+            +flex-dir(column)
+            gap:0
+    .widget_block
+        flex:1
+        .wp-block-heading
+            margin-top: $s-20
+            margin-bottom: $s-38
+    .newsletter_form_wrap
+        flex: 1
+        margin-top: $s-48
+        .newsletter_form
+            padding: $s-24
+            border: 1px solid $text-tertiary
+            .wpforms-title
+                color: $text-primary !important
+                margin-bottom: $s-12
+                text-transform: capitalize !important
+            .wpforms-description
+                color: $text-secondary !important
+            .wp-fieldWrap
+                label
+                    display: none !important
+                input
+                    color: $text-secondary
+                    text-align: left !important
+                    &::placeholder
+                        color: $text-secondary

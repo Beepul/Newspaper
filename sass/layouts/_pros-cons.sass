@@ -1,0 +1,45 @@
+.pros-cons
+    background: var(--bg, rgba(16, 43, 84, 0.04))
+    margin-bottom: $s-48
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        width: 1px 
+        height: 50%
+        background-color: $text-tertiary
+        left: 50%
+        top: 50%
+        transform: translateY(-50%) rotate(90deg) 
+        +sm 
+            height: 100%
+        +lg
+            height: 80%
+            top: 10%
+            transform: translateY(0) rotate(0deg)
+        
+    .pros,.cons
+        padding: 0 $s-24
+        ul
+            padding-left: 0
+            margin-bottom: 0 !important
+            li:not(:last-child)
+                border-bottom: 1px solid $text-tertiary
+                padding-bottom: $s-16
+        .wp-block-heading
+            border-bottom: 1px solid $text-tertiary
+            margin-bottom: $s-24
+        
+    .pros
+        ul
+
+            li
+                &::before
+                    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M5.279 11.3824C7.4945 7.55747 11.426 0.179637 13.1618 0.335941L6.02123 13.3674C5.58392 13.8326 5.24005 13.6843 4.97256 13.4041L0.332031 8.77538C0.693912 7.9871 3.27624 10.0546 5.27883 11.3823L5.279 11.3824Z' fill='%23102B54'/%3E%3C/svg%3E") 
+                    background-color: var(--news-primary-color)
+    .cons
+        ul
+            li
+                &::before
+                    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M5.91124 8.3526C4.15093 9.79708 3.0261 11.1918 2.53725 12.6361C1.80376 14.479 0.434596 13.4829 0.336803 12.4867C0.190088 10.7434 3.46625 8.0537 4.73764 7.00773C2.87954 4.81614 1.95032 3.12278 1.8525 1.97718C1.70579 0.383273 3.36836 0.0346571 3.85733 0.781803C4.493 1.77802 4.15076 3.47157 6.25339 5.91199C8.40492 4.16873 9.87169 2.67446 10.5564 1.32958C11.4366 -0.314149 12.9036 0.333358 13.0014 1.42921C13.0503 2.12653 11.2411 4.11897 7.47587 7.30669C8.94285 8.85078 11.3876 10.8431 13.0014 11.5902C14.3705 12.2875 13.3436 13.4331 12.4146 13.3833C11.29 13.3833 8.55176 11.1917 5.91117 8.35273L5.91124 8.3526Z' fill='%23E02A20'/%3E%3C/svg%3E")
+                    background-color: var(--news-secondary-color)

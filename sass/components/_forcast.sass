@@ -1,0 +1,24 @@
+.forcast__wrap
+    +flex 
+    +flex-align(center)
+    +flex-just(center)
+    gap: $s-12
+    width: 100%
+    .forcast__logo
+        @extend %display-center
+        width: 10%
+        +sm 
+            width: auto
+    .forcast_info
+        width: 38%
+        +flex
+        +flex-dir(column)
+        +sm 
+            width: auto
+        .forcast__heading
+            color: $white
+            @extend %bold 
+            font-size: $font-14
+        .forcast__desc
+            font-size: $font-12
+            color: $white

@@ -1,0 +1,1155 @@
+.sticky 
+    position: fixed
+    top: 0
+    width: 100%
+    animation: fadeIn 0.3s
+    z-index: 999
+
+@keyframes fadeIn 
+    from 
+        opacity: 0
+    to 
+        opacity: 1
+
+    
+.site-header
+    .custom-logo
+        +transition(.3s ease-in-out)
+    .custom-logo-forDark
+        +transition(.3s ease-in-out)
+        display: none
+    .header-top
+        background-color: var(--news-primary-color)
+        padding: $s-16 0
+        .top__left
+            +flex 
+            +flex-align(center)
+            gap: $s-20
+            +flex-just(space-between)
+            height: 100%
+            +sm 
+                +flex-just(start)
+            .custom-select
+                height: auto
+            .select-text 
+                color: $white
+        .top__mid
+            padding: $s-16 0
+            +flex 
+            +flex-just(space-between)
+            column-gap: $s-48
+            row-gap: $s-12
+            height: 100%
+            flex-wrap: wrap
+            +sm 
+                flex-wrap: nowrap
+                padding: 0
+                padding-top: $s-16
+            +lg 
+                padding: 0
+        .top__right
+            height: 100%
+            .social-networks
+                height: 100%
+                +flex-align(center)
+                +flex-just(center)
+                +sm 
+                    +flex-just(end)
+    .header-mid 
+        padding-top: $s-16 
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+        +lg 
+            padding: $s-16
+            box-shadow: none
+        .mid 
+            +flex 
+            +flex-just(space-between)
+            height: 100%
+            padding: $s-16 0
+            +md 
+                padding: 0
+            .mid-right
+                +flex
+                +flex-align(center)
+                gap: $s-18
+                .btn__night__mode
+                    +flex 
+                    +lg 
+                        display: none
+
+                .bars
+                    +flex 
+                    +lg 
+                        display: none
+        .header-ads
+            min-height: 100px
+            background-image: url('../assets/images/ads-1.png')
+            background-repeat: no-repeat
+            background-position: center
+            background-size: cover
+            position: relative
+            &::after 
+                content: ''
+                position: absolute
+                inset: 0
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%)
+            .content
+                position: relative
+                z-index: 1
+                padding: $s-12
+                inset: 0
+                +flex 
+                +flex-align(start)
+                +flex-just(space-between)
+                gap: $s-16
+                +flex-dir(column)
+                +md
+                    +flex-dir(row)
+                    +flex-align(center)
+                    position: absolute
+                .ads-con
+                    display: block
+                    +md 
+                        +flex 
+                        +flex-align(center)
+                        gap: $s-20
+                    .ban-info
+                        border: 0
+                        display: block
+                        +md 
+                            border-right: 4px solid $text-secondary
+                            padding-right: $s-20
+                            +flex 
+                            +flex-dir(column)
+                            +flex-align(end)
+
+                        span
+                            @extend %semi-bold
+                            color: $white 
+                            font-size: $font-16
+                        span.area 
+                            @extend %regular
+                            font-size: $font-12
+                    .ads-info
+                        color: $white 
+                        font-size: $font-14
+                        br 
+                            display: none 
+                            +md 
+                                display: block
+
+    .desktop-header
+        border-top: 1px solid $text-tertiary
+        background:  $white
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+        display: none 
+        +lg 
+            display: block
+        .header-bottom
+            .header-left
+                .menu-container
+                    .menu
+                        +flex 
+                        +flex-align(center)
+                        gap: $s-14
+                        +xl 
+                            gap: $s-24
+
+                        .menu-item
+                            &:hover
+                                &>a
+                                    color: var(--news-secondary-color)  
+                                    path 
+                                        fill: var(--news-secondary-color) 
+                            a 
+                                +flex 
+                                +flex-align(center)
+                                gap: $s-8
+                                text-transform: uppercase
+                                padding: $s-16 0
+                                color: $text-primary
+                                path
+                                    +transition(.3s ease-in-out)
+                        .menu-item.menu-item-has-children
+                            +flex
+                            +flex-align(center)
+                            gap: $s-8
+                            position: relative
+                            &::after
+                                content: ''
+                                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M1 4.16667L2.16667 3L6 6.83333L9.83333 3L11 4.16667L6 9.16667L1 4.16667Z' fill='%23212529'/%3E%3C/svg%3E")
+                                mask-repeat: no-repeat
+                                mask-size: 12px
+                                display: inline-block
+                                height: 13px 
+                                width: 13px
+                                background-color: $text-primary
+                                +transition(.3s ease-in-out)
+                                transform: translateY(-3px)
+                            &:hover
+                                .sub-menu
+                                    visibility: visible
+                                    opacity: 1
+                                &::after
+                                    background-color: var(--news-secondary-color)
+                            a 
+                            .sub-menu
+                                visibility: hidden
+                                opacity: 0
+                                position: absolute
+                                top: 100%
+                                left: 0
+                                // right: -120%
+                                min-width: max-content
+                                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+                                border-top: 1px solid $text-tertiary
+                                +transition(.3s ease-in-out)
+                                background-color: $white
+                                z-index: 20
+                                .menu-item
+                                    a
+                                        padding: $s-14
+                                .menu-item:not(:last-child)
+                                    a
+                                        @extend %border-btm
+                                .menu-item.menu-item-has-children
+                                    +flex-just(space-between)
+                                    &::after
+                                        transform: rotate(-90deg)
+                                        margin-right: $s-14
+                                    &:hover 
+                                        .sub-menu
+                                            visibility: visible
+                                            opacity: 1
+                                    .sub-menu
+                                        top: 0
+                                        left: 100%
+                                        visibility: hidden
+                                        opacity: 0
+                                        z-index: 10
+                                        .menu-item
+                                            a
+                                                padding: $s-14
+                                        .menu-item:not(:last-child)
+                                            a
+                                                @extend %border-btm
+                                        .menu-item.menu-item-has-children
+                                            +flex-just(space-between)
+                                            &::after
+                                                transform: rotate(-90deg)
+                                                margin-right: $s-14
+                                            &:hover 
+                                                .sub-menu
+                                                    visibility: visible
+                                                    opacity: 1
+                                            .sub-menu
+                                                top: 0
+                                                left: 100%
+                                                visibility: hidden
+                                                opacity: 0
+                                                z-index: 10
+                                        
+                                        
+            .header-right
+                +flex 
+                height: 100%
+                +flex-align(center)
+                +flex-just(end)
+                gap: $s-12
+                +xl
+                    gap: $s-20
+                .header-search-container
+                    position: relative
+                    height: 100%
+                    max-width: 100%
+                    .btn__href
+                        height: 100%
+                    .header-search-wrap
+                        position: absolute
+                        top: 100%
+                        right: 0
+                        background: $text-tertiary
+                        padding: $s-12
+                        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+                        display: none
+                        form
+                            background: $white
+                            +flex
+                            +flex-align(center)
+                            padding: 0 $s-8
+                            max-width: 100%
+                            label 
+                                max-width: 86%
+                                input[type="search"], .search-field
+                                    border: 0
+                                    background-color: transparent
+                            .search-submit, input[type="submit"]
+                                padding: 0
+                                font-size: 0
+                                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 17.5L12.5 12.5M2.5 8.33333C2.5 9.09938 2.65088 9.85792 2.94404 10.5657C3.23719 11.2734 3.66687 11.9164 4.20854 12.4581C4.75022 12.9998 5.39328 13.4295 6.10101 13.7226C6.80875 14.0158 7.56729 14.1667 8.33333 14.1667C9.09938 14.1667 9.85792 14.0158 10.5657 13.7226C11.2734 13.4295 11.9164 12.9998 12.4581 12.4581C12.9998 11.9164 13.4295 11.2734 13.7226 10.5657C14.0158 9.85792 14.1667 9.09938 14.1667 8.33333C14.1667 7.56729 14.0158 6.80875 13.7226 6.10101C13.4295 5.39328 12.9998 4.75022 12.4581 4.20854C11.9164 3.66687 11.2734 3.23719 10.5657 2.94404C9.85792 2.65088 9.09938 2.5 8.33333 2.5C7.56729 2.5 6.80875 2.65088 6.10101 2.94404C5.39328 3.23719 4.75022 3.66687 4.20854 4.20854C3.66687 4.75022 3.23719 5.39328 2.94404 6.10101C2.65088 6.80875 2.5 7.56729 2.5 8.33333Z' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E")
+                                mask-repeat: no-repeat 
+                                width: 18px 
+                                height: 18px 
+                                border: 0
+                                background-color: $text-primary
+                                cursor: pointer
+                    .header-search-wrap.active
+                        display: block
+
+            
+        
+.site-header.style-one
+    .header-mid 
+        padding-bottom: 16px 
+        .mid
+            display: none 
+            +lg 
+                +flex
+    .mobile-header
+        display: block 
+        background-color: $white
+        padding: 8px 0
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+        +lg 
+            display: none
+        .mobile-header-left
+            height: 100%
+            +flex 
+            +flex-just(end)
+            +flex-align(center)
+            gap: 20px
+.site-header.style-two
+    .header-top
+        background-color: $white 
+        padding: 0
+        border: 1px solid $text-tertiary
+
+        .top__left
+            display: none
+            +flex-just(center)
+            +lg 
+                +flex
+                +flex-just(start)
+            .select-text-con
+                .icon
+                    path
+                        fill: $text-primary
+                .select-text
+                    color: $text-primary
+                    &::after 
+                        background-color: $text-primary
+            .select-options
+                top: 130%
+        .top__mid 
+            padding: 0
+            .news-ticker
+                margin-top: 0
+                max-width: 100%
+                .news-ticker-slider
+                    border: 0
+                .breaking_news_list
+                    a
+                        color: $text-primary
+                        border-color: $text-primary
+        .top__right
+            display: none 
+            +lg 
+                display: block
+            .social-networks
+                .share,a
+                    color: $text-primary
+                    &::after
+                        background-color: $text-primary
+                .share
+                    width: auto
+        .top__left,.top__right
+            padding: 22px 0
+            border-top: 1px solid $text-tertiary
+            +lg 
+                padding: 0
+
+    .header-mid
+        padding: 0
+        .mid-left
+            +flex 
+            +flex-align(center)
+            gap: 20px
+            height: 100%
+            // +flex-dir(column)
+            padding: $s-20 0
+            border-bottom: 1px solid $text-tertiary
+            +lg 
+                border-bottom: 0
+            // +sm 
+            //     +flex-dir(row)
+            span
+                color: $text-primary
+                svg path 
+                    fill: $text-primary
+            .forcast__wrap
+                +flex-just(center)
+                width: 100% 
+                +sm 
+                    +flex-just(start)
+                +lg 
+                    width: auto
+                .forcast__logo
+                    svg
+                        min-width: 20px
+                .forcast_info
+                    width: auto
+                    .forcast__desc
+                        font-size: $font-14
+                        color: $text-primary
+            .forcast__wrap:first-child
+                +flex-just(center)
+                +sm 
+                    +flex-just(end)
+                +lg 
+                    +flex-just(start)
+        .site-branding
+            margin: $s-12 0
+            img 
+                +lg
+                    height: 70px
+        .mid-right
+            +flex 
+            +flex-align(center)
+            +flex-just(end)
+            height: 100%
+            gap: $s-24 
+            .btn__outline
+                border-color: $text-secondary
+                color: $text-secondary
+                padding: 10px $s-32
+                display: none 
+                +sm 
+                    +flex 
+                
+                &:hover 
+                    border-color: var(--news-secondary-color)
+                    color: $white 
+                    opacity: 1
+                &:focus 
+                    border-color: $text-secondary
+                    color: $text-secondary
+
+    .desktop-header
+        .header-bottom
+            background-color: var(--news-primary-color)
+        .header-left
+            +flex
+            +flex-align(center)
+            gap: $s-24 
+            height: 100%
+            
+            .bars
+                .bar 
+                    background-color: $white
+            .bars.desktop
+                display: none 
+                +lg 
+                    +flex 
+            .bars.mobile
+                +flex 
+                +lg 
+                    display: none
+            .sidebar
+                display: block 
+                +lg 
+                    display: none 
+            .sidebar.desktop
+                display: none 
+                +lg 
+                    display: block
+           
+            .main-navigation
+                .menu
+                    .menu-item 
+                        &:hover 
+                            a 
+                                color: $white
+                                svg path
+                                    fill: $white
+                        a
+                            color: $white
+                            svg path 
+                                fill: $white
+                    .menu-item.menu-item-has-children
+                        &::after 
+                            background-color: $white
+                        &:hover 
+                            &::after 
+                                background-color: $white
+                                opacity: 0.8
+                        .sub-menu
+                            .menu-item
+                                a
+                                    color: $text-primary
+                            .menu-item.menu-item-has-children
+                                &::after 
+                                    background-color: $text-primary
+        .header-right
+            .header-search-wrap
+                position: static !important
+                display: flex !important
+                background: transparent !important
+                padding: 12px 0 !important
+                height: 100%
+                +flex-align(center)
+                +lg 
+                    padding: 0 !important
+                form
+                    padding: 0 $s-16 !important
+                input[type=search]
+                    padding: 6px 0
+
+    .mobile-header
+        display: block 
+        background-color: var(--news-primary-color)
+        +lg 
+            display: none
+        .mobile-header-left
+            height: 100%
+            +flex 
+            +flex-align(center)
+            .bars
+                .bar
+                    background-color: $white
+        .mobile-header-right
+            +flex 
+            gap: $s-20
+            height: 100%
+            +flex-align(center)
+            +flex-just(end)
+            .header-search-container
+                position: relative
+                height: 100%
+                width: 100%
+                .btn__href
+                    height: 100%
+                .header-search-wrap
+                    padding: $s-12 0
+                    form
+                        background: $white
+                        +flex
+                        +flex-align(center)
+                        padding: 0 $s-16
+                        label 
+                            width: 80%
+                            input[type="search"], .search-field
+                                border: 0
+                                background-color: transparent
+                        .search-submit, input[type="submit"]
+                            width: 20%
+                            padding: 0
+                            font-size: 0
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 17.5L12.5 12.5M2.5 8.33333C2.5 9.09938 2.65088 9.85792 2.94404 10.5657C3.23719 11.2734 3.66687 11.9164 4.20854 12.4581C4.75022 12.9998 5.39328 13.4295 6.10101 13.7226C6.80875 14.0158 7.56729 14.1667 8.33333 14.1667C9.09938 14.1667 9.85792 14.0158 10.5657 13.7226C11.2734 13.4295 11.9164 12.9998 12.4581 12.4581C12.9998 11.9164 13.4295 11.2734 13.7226 10.5657C14.0158 9.85792 14.1667 9.09938 14.1667 8.33333C14.1667 7.56729 14.0158 6.80875 13.7226 6.10101C13.4295 5.39328 12.9998 4.75022 12.4581 4.20854C11.9164 3.66687 11.2734 3.23719 10.5657 2.94404C9.85792 2.65088 9.09938 2.5 8.33333 2.5C7.56729 2.5 6.80875 2.65088 6.10101 2.94404C5.39328 3.23719 4.75022 3.66687 4.20854 4.20854C3.66687 4.75022 3.23719 5.39328 2.94404 6.10101C2.65088 6.80875 2.5 7.56729 2.5 8.33333Z' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E")
+                            mask-repeat: no-repeat 
+                            width: 18px 
+                            height: 18px 
+                            border: 0
+                            background-color: $text-primary
+                            cursor: pointer
+
+
+
+.site-header.style-three
+    .header-top
+        background-color: $text-tertiary
+        padding: $s-8 0 !important
+        .top__mid
+            padding-top: 0 !important
+            padding-bottom: 0 !important
+            .news-ticker
+                margin-top: 0
+                max-width: 100%
+                .news-ticker-slider
+                    border: 0
+                .breaking__news
+                    background-color: transparent
+                    padding-left: 0
+                    min-width: auto !important
+                    +lg 
+                        min-width: 179px !important
+                    svg path
+                        fill: var(--news-secondary-color)
+                    .ticker-title
+                        color: var(--news-secondary-color)
+                        display: none 
+                        +lg
+                            display: block
+        .top__right
+            display: none 
+            +lg 
+                display: block
+            .social-networks
+                a
+                    color: $text-primary
+                    &::after 
+                        background-color: $text-primary
+    .header-mid
+        box-shadow: none
+        +lg
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08) 
+
+        .mid-left
+            +flex
+            +flex-align(center)
+            gap: $s-20
+            +flex-just(space-between)
+            margin-bottom: $s-16 
+            flex-wrap: wrap-reverse
+            height: 100%
+            +sm 
+                +flex-just(start)
+            +lg 
+                margin-bottom: 0
+            .custom-select
+                height: auto
+                .select-text-con 
+                    .icon svg path
+                        fill: $text-primary
+                    .select-text
+                        &::after
+                            background-color: $text-primary
+
+        .mid-mid
+            height: 100%
+            display: block 
+            +lg 
+                +flex 
+                +flex-just(center)
+                +flex-align(center)
+            +xxl 
+                display: block
+            
+            .advance-news-search
+                margin-bottom: $s-16
+                width: 100%
+                +lg 
+                    margin-bottom: 0
+        .mid-right
+            +flex
+            +flex-align(center)
+            gap: $s-20
+            height: 100%
+            +flex-just(space-between)
+            padding-bottom: $s-16
+            +sm 
+                +flex-just(end)
+            +lg
+                padding-bottom: 0
+            .forcast__wrap
+                +flex-just(start)
+                width: 50%
+                +sm 
+                    width: auto
+                    +flex-just(end)
+                +lg
+                    +flex-dir(column)
+                    +flex-just(center)
+                +xxl 
+                    +flex-dir(row)
+                    +flex-just(end)
+                .forcast_info .forcast__desc
+                    color: $text-primary
+                .forcast__logo
+                    min-width: 20px
+                    align-self: center
+                .forcast_info
+                    width: auto
+            .forcast__wrap:last-child
+                +flex-just(end)
+
+                    
+    .desktop-header
+        display: none
+        padding: $s-16 0
+        +lg 
+            display: block
+        +xxl
+            padding: 0
+        .header-mid
+            +flex
+            +flex-align(center)
+            gap: $s-24
+            padding: 0
+            height: 100%
+            box-shadow: none
+            .site-branding
+                display: none 
+                +xxl 
+                    display: block
+            .sidebar.desktop
+                .site-branding
+                    display: block
+        .header-left
+            .site-branding
+                display: block
+                +xxl 
+                    display: none 
+            .main-navigation
+                display: none 
+                +xxl 
+                    display: block
+                .menu
+                    .menu-item
+                        a
+                            padding: $s-38 0 !important
+                    .menu-item.menu-item-has-children
+                        .sub-menu
+                            .menu-item
+                                a
+                                    padding: $s-16 !important
+    .mobile-header
+        display: block
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+        padding-bottom: $s-8
+        background-color: $white
+        +lg 
+            padding-bottom: 0
+            box-shadow: none
+            display: none
+        .mobile-header-left
+            height: 100%
+            float: right
+            @extend %display-center
+            gap: $s-20
+
+
+
+
+.site-header.style-four
+    .header-top
+        background-color: $white
+        padding: 0 !important 
+        border-bottom: 1px solid $text-tertiary
+        .top__left
+            display: none 
+            +lg 
+                +flex
+            .login
+                height: 28px 
+                width: 28px 
+                +radius(50%)
+                border: 1px solid var(--news-secondary-color)
+                @extend %display-center
+            // .search-wrapper
+            //     height: 28px 
+            //     width: 28px 
+            //     +radius(50%)
+            //     @extend %display-center
+            //     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+            .header-search-container
+                position: relative
+                // height: 100%
+                .btn__href
+                    height: 28px 
+                    width: 28px 
+                    +radius(50%)
+                    @extend %display-center
+                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+                .header-search-wrap
+                    position: absolute
+                    top: 132%
+                    left: 0
+                    background: $text-tertiary
+                    padding: $s-12
+                    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+                    display: none
+                    z-index: 5
+                    form
+                        background: $white
+                        +flex
+                        +flex-align(center)
+                        padding: 0 $s-8
+                        label 
+                            input[type="search"], .search-field
+                                border: 0
+                                background-color: transparent
+                        .search-submit, input[type="submit"]
+                            padding: 0
+                            font-size: 0
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 17.5L12.5 12.5M2.5 8.33333C2.5 9.09938 2.65088 9.85792 2.94404 10.5657C3.23719 11.2734 3.66687 11.9164 4.20854 12.4581C4.75022 12.9998 5.39328 13.4295 6.10101 13.7226C6.80875 14.0158 7.56729 14.1667 8.33333 14.1667C9.09938 14.1667 9.85792 14.0158 10.5657 13.7226C11.2734 13.4295 11.9164 12.9998 12.4581 12.4581C12.9998 11.9164 13.4295 11.2734 13.7226 10.5657C14.0158 9.85792 14.1667 9.09938 14.1667 8.33333C14.1667 7.56729 14.0158 6.80875 13.7226 6.10101C13.4295 5.39328 12.9998 4.75022 12.4581 4.20854C11.9164 3.66687 11.2734 3.23719 10.5657 2.94404C9.85792 2.65088 9.09938 2.5 8.33333 2.5C7.56729 2.5 6.80875 2.65088 6.10101 2.94404C5.39328 3.23719 4.75022 3.66687 4.20854 4.20854C3.66687 4.75022 3.23719 5.39328 2.94404 6.10101C2.65088 6.80875 2.5 7.56729 2.5 8.33333Z' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E")
+                            mask-repeat: no-repeat 
+                            width: 18px 
+                            height: 18px 
+                            border: 0
+                            background-color: $text-primary
+                            cursor: pointer
+                .header-search-wrap.active
+                    display: block
+            
+        .top__mid
+            padding-top: 0 !important
+            padding-bottom: 0 !important
+            .news-ticker
+                margin-top: 0
+                max-width: 100%
+                .news-ticker-slider
+                    border: 0
+                .breaking__news
+                    padding-left: 0
+                    min-width: auto !important
+                    height: 100%
+                    display: inline-block
+                    +lg 
+                        +flex
+                        min-width: 179px !important
+                    svg 
+                        transform: translate(8px,3px)
+                        +lg 
+                            transform: translate(0,0)
+                    .ticker-title
+                        display: none 
+                        +lg
+                            display: block
+        .top__right
+            display: none 
+            +lg 
+                display: block
+            .social-networks
+                a
+                    color: $text-primary
+                    &::after 
+                        background-color: $text-primary
+    .header-mid
+        padding: 0
+        +lg 
+            padding: 24px 
+        .mid-left,.mid-right
+            height: 100%
+            padding-bottom: $s-24 
+            +lg 
+                padding-bottom: 0
+            .forcast__wrap
+                height: 100%
+                svg path
+                    fill: $text-primary
+                .forcast_info
+                    width: auto
+                    .forcast__heading,.forcast__desc
+                        color: $text-primary
+        .mid-left
+            .forcast__wrap
+                +flex-just(start)
+        .mid-right
+            .forcast__wrap
+                +flex-just(end)
+        .header-ads
+            margin: $s-24 0
+            +lg 
+                margin: 0
+    .desktop-header
+        background: var(--news-primary-color) !important
+        .desktop-header-left
+            +flex 
+            +flex-align(center)
+            gap: $s-6
+            +xxl
+                gap: $s-24
+            .bars
+                .bar
+                    background-color: $white
+        .desktop-header-right
+            +flex 
+            +flex-align(center)
+            +flex-just(end)
+            gap: $s-6
+            +xxl
+                gap: $s-24
+            .custom-select
+                .select-text
+                    color: $white
+        .site-branding
+            height: 100%
+            @extend %display-center
+        .menu
+            +flex 
+            // gap: $s-24
+            +flex-align(center)
+            .menu-item
+                padding: $s-22 0
+                &:hover
+                    &>a
+                        background-color: $text-tertiary
+                        color: var(--news-primary-color)
+                        opacity: 1
+                        path
+                            fill: var(--news-primary-color)
+                a 
+                    +flex 
+                    +flex-align(center)
+                    gap: $s-8
+                    text-transform: uppercase
+                    color: $white
+                    padding: 4px 6px 
+                    +xxl 
+                        padding: 4px 16px
+                    path
+                        +transition(.3s ease-in-out)
+                        fill: $white
+            .menu-item.menu-item-has-children
+                +flex
+                +flex-align(center)
+                gap: $s-8
+                position: relative
+                &:hover
+                    .sub-menu
+                        visibility: visible
+                        opacity: 1
+                    a
+                        &::after
+                            background-color: var(--news-primary-color)
+                &>a::after
+                    content: ""
+                    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M1 4.16667L2.16667 3L6 6.83333L9.83333 3L11 4.16667L6 9.16667L1 4.16667Z' fill='%23212529'/%3E%3C/svg%3E")
+                    mask-repeat: no-repeat
+                    background-size: 12px 
+                    background-color: $white
+                    display: inline-block
+                    height: 13px
+                    width: 13px
+                    transform: translateY(-3px)
+                    +transition(.3s ease)
+                .sub-menu
+                    visibility: hidden
+                    opacity: 0
+                    position: absolute
+                    top: 100%
+                    left: 0
+                    width: max-content
+                    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+                    border-top: 1px solid $text-tertiary
+                    +transition(.3s ease-in-out)
+                    background-color: $white
+                    z-index: 20
+                    .menu-item
+                        padding: 0
+                        a
+                            padding: $s-14
+                            color: $text-primary
+                        &:hover
+                            background-color: var(--news-primary-color)
+                            a
+                                background-color: transparent
+                                color: $white
+                            
+                    .menu-item:not(:last-child)
+                        a
+                            @extend %border-btm
+                    .menu-item.menu-item-has-children
+                        a
+                            +flex
+                            width: 100%
+                            +flex-just(space-between)
+                            &::after
+                                transform: rotate(-90deg)
+                                margin-right: $s-14
+                                background-color: $text-primary
+                        &:hover 
+                            a::after
+                                background-color: $white
+                            .sub-menu
+                                visibility: visible
+                                opacity: 1
+                        .sub-menu
+                            top: 0
+                            left: 100%
+                            visibility: hidden
+                            opacity: 0
+                            z-index: 10
+                            .menu-item
+                                a
+                                    color: $text-primary
+                                &:hover
+                                    a
+                                        color: $white
+                        .menu-item.menu-item-has-children
+                            a
+                                +flex
+                                width: 100%
+                                +flex-just(space-between)
+                                &::after
+                                    transform: rotate(-90deg)
+                                    margin-right: $s-14
+                                    background-color: $text-primary
+                            &:hover 
+                                a::after
+                                    background-color: $white
+                                .sub-menu
+                                    visibility: visible
+                                    opacity: 1
+                            .sub-menu
+                                top: 0
+                                left: 100%
+                                visibility: hidden
+                                opacity: 0
+                                z-index: 10
+                                .menu-item
+                                    a
+                                        color: $text-primary
+                                    &:hover
+                                        a
+                                            color: $white
+
+    .mobile-header
+        display: block
+        padding: 8px 0
+        background-color: var(--news-primary-color)
+        +lg 
+            padding-bottom: 0
+            box-shadow: none
+            display: none
+        .mobile-header-left
+            height: 100%
+            float: right
+            @extend %display-center
+            gap: $s-20
+        .bars
+            .bar
+                background-color: $white
+
+
+.site-header.style-five
+    .header-top
+        padding: 0
+        .news-ticker
+            margin-top: 0
+            .breaking__news
+                background-color: transparent
+                path
+                    fill: var(--news-secondary-color)
+                span,.ticker-title
+                    color: var(--news-secondary-color)
+
+            .news-ticker-slider
+                border: 0
+                ul li a
+                    color: $white
+                    border-color: $white
+        .top-right
+            height: 100%
+            padding-left: 8px
+            +flex-align(center)
+            +flex-just(end)
+            gap: $s-12
+            display: none 
+            +lg 
+                +flex
+            .forcast__wrap
+                +flex-just(start)
+                // height: 100%
+                width: auto
+                padding-right: $s-12
+                border-right: 1px solid $text-tertiary
+            .social-wrap
+                +flex
+                +flex-align(center)
+                gap: $s-12
+                span
+                    color: $white
+                .social-networks li a 
+                    height: auto 
+                    width: auto 
+                    +radius(0)
+                    background-color: transparent !important
+    .btn__night__mode
+        background-color: $text-secondary
+    .desktop-header.sticky
+        position: static
+        animation: none
+    .desktop-header
+        background-color: $text-tertiary
+        padding: 36px 0 
+        box-shadow: none
+        .desktop-header-left
+            +flex 
+            +flex-align(center)
+            gap: 20px
+            height: 100%
+            .header-search-container
+                position: relative
+                height: 100%
+                .btn__href
+                    height: 100%
+                .header-search-wrap
+                    position: absolute
+                    z-index: 30
+                    top: 65%
+                    left: 0
+                    // background: $text-tertiary
+                    // padding: $s-12
+                    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08)
+                    display: none
+                    form
+                        background: $white
+                        +flex
+                        +flex-align(center)
+                        padding: 0 $s-8
+                        label 
+                            input[type="search"], .search-field
+                                border: 0
+                                background-color: transparent
+                        .search-submit, input[type="submit"]
+                            padding: 0
+                            font-size: 0
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 17.5L12.5 12.5M2.5 8.33333C2.5 9.09938 2.65088 9.85792 2.94404 10.5657C3.23719 11.2734 3.66687 11.9164 4.20854 12.4581C4.75022 12.9998 5.39328 13.4295 6.10101 13.7226C6.80875 14.0158 7.56729 14.1667 8.33333 14.1667C9.09938 14.1667 9.85792 14.0158 10.5657 13.7226C11.2734 13.4295 11.9164 12.9998 12.4581 12.4581C12.9998 11.9164 13.4295 11.2734 13.7226 10.5657C14.0158 9.85792 14.1667 9.09938 14.1667 8.33333C14.1667 7.56729 14.0158 6.80875 13.7226 6.10101C13.4295 5.39328 12.9998 4.75022 12.4581 4.20854C11.9164 3.66687 11.2734 3.23719 10.5657 2.94404C9.85792 2.65088 9.09938 2.5 8.33333 2.5C7.56729 2.5 6.80875 2.65088 6.10101 2.94404C5.39328 3.23719 4.75022 3.66687 4.20854 4.20854C3.66687 4.75022 3.23719 5.39328 2.94404 6.10101C2.65088 6.80875 2.5 7.56729 2.5 8.33333Z' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E")
+                            mask-repeat: no-repeat 
+                            width: 18px 
+                            height: 18px 
+                            border: 0
+                            background-color: $text-primary
+                            cursor: pointer
+                .header-search-wrap.active
+                    display: block
+        .desktop-header-right
+            +flex 
+            +flex-align(center)
+            gap: 20px
+            +flex-just(end)
+            height: 100%
+            .custom-select
+                height: auto
+                .icon
+                    svg path
+                        fill: $text-primary
+                .select-text
+                    color: $text-primary
+                    &::after
+                        background-color: $text-primary
+                .select-options
+                    top: 125%
+            .btn__night__mode
+                .indicator
+                    background-color: $white
+        .header-left
+            .site-branding
+                width: 100%
+                @extend %display-center
+            .menu-container
+                .menu
+                    gap: 10px 
+                    +xxl
+                        gap: 24px
+                    // &:hover
+                    //     a svg path
+                    //         fill: var(--news-secondary-color)
+
+    .mobile-header
+        display: block 
+        background-color: $text-tertiary
+        padding: 12px 0
+        +lg 
+            display: none
+        .mobile-header-left
+            +flex 
+            +flex-align(center)
+            +flex-just(end)
+            height: 100%
+            gap: $s-20
+        .btn__night__mode
+            .indicator
+                background-color: $white
+

@@ -1,0 +1,21 @@
+.bookmark-wrapper
+    .navigation.pagination
+        margin-bottom: $s-40
+    .related-post
+        .section__heading
+            margin-bottom: $s-48
+        .content-wrap-main
+            display: grid
+            grid-template-columns: repeat(1, 1fr)
+            grid-gap: 48px
+            margin-bottom: 0
+            +md
+                grid-template-columns: repeat(2, 1fr)
+            .post
+                padding: 0
+                +flex-dir(column)
+                gap: 0
+                .archive-content-wrapper
+                    padding: $s-24
+                    border: 1px solid $text-tertiary
+                    border-top: 0

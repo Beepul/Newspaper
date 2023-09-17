@@ -1,0 +1,62 @@
+.tab__wrapper
+    .tab__btn__con
+        @extend %border-btm
+        +flex 
+        +flex-align(center)
+        +flex-just(space-between)
+        .tab-button 
+            border: 0
+            padding: 0
+            padding: $s-8 0
+            text-transform: uppercase
+            @extend %bold
+            position: relative
+            font-size: $font-16
+            +sm 
+                font-size: $font-18
+            &::after
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                right: 100%
+                height: 1.5px 
+                +transition(.3s ease-in-out)
+                background-color: var(--news-secondary-color)
+        .tab-button.active
+            &::after 
+                right: 0
+
+    .tab-content
+        display: none
+.gallery_tab_wrap
+    .gallery-tabs
+        +flex 
+        +flex-align(center)
+        gap: $s-8
+        +sm
+            gap: $s-24
+
+        a, .gallery-tab-btn
+            text-transform: capitalize
+            color: $text-secondary
+            +transition(0.3s ease-in-out)
+            &:hover 
+                color: var(--news-secondary-color)
+        .gallery-tab-btn.active
+            color: var(--news-secondary-color)
+    .gallery_item 
+        display: none
+
+    .gallery_item.active 
+        display: block
+        animation: fadeIn 0.6s ease-in-out
+        
+
+@keyframes fadeIn 
+    from 
+        opacity: 0
+    to 
+        opacity: 1
+            
+        

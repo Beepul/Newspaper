@@ -1,0 +1,80 @@
+.comments-area
+    .comment-list
+        li:not(:last-child),.comment:not(:last-child)
+            article,.comment-body
+                border-bottom: 1px solid $text-tertiary
+        li,.comment
+            article,.comment-body
+                padding-bottom: 24px
+                column-gap: $s-24
+                // display: block
+                +flex
+                +flex-dir(column)
+                +sm 
+                    +flex-dir(row)
+                    +flex-align(center)
+                .comment-author
+                    img 
+                        object-fit: cover
+                        +radius(50%)
+                        min-height: calc(72px / 2 ) 
+                        min-width: calc(72px / 2 )
+                        height: calc(72px / 2 ) 
+                        width: calc(72px / 2 )
+                        // float: left
+                        margin-right: 16px
+                        +sm 
+                            // float: none
+                            margin-right: 0
+                            min-height: 72px 
+                            min-width: 72px
+                            height: 72px 
+                            width: 72px
+                .comment-body_wrap
+                    footer,.comment-meta 
+                        padding-top: 5px
+                        margin-bottom: $s-14
+                        +sm 
+                            padding-top: 0
+                            margin-bottom: $s-8
+                        .comment-metadata
+                            +flex 
+                            +flex-align(center)
+                            flex-wrap: wrap
+                            column-gap: $s-16
+                            b,.fn
+                                text-transform: capitalize
+                                @extend %bold
+                                color: $text-primary
+                            span,.says
+                                display: none
+                            a 
+                                time
+                                    font-size: $font-14
+                                    color: $text-secondary
+                            span,.edit-link
+                                a,.comment-edit-link
+                    .comment-content
+                        p
+                            margin-bottom: $s-16
+                    .reply
+                        a,.comment-reply-link
+                            color: $text-primary
+                            position: relative
+                            padding-left: 46px
+                            &::before
+                                content: ''
+                                height: 2px 
+                                width: 32px 
+                                position: absolute
+                                left: 0px
+                                top: 50%
+                                transform: translateY(-50%)
+                                background-color: var(--news-secondary-color)
+            .children
+                margin: 24px 0
+                li,.comment
+                    article,.comment-body
+                        padding-left: $s-32
+                        +sm 
+                            padding-left: 72px + 24px

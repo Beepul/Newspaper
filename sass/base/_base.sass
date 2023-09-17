@@ -1,0 +1,44 @@
+@import '../utils/global'
+@import './reset'
+@import './typography'
+@import './normalize'
+
+// @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300&display=swap')
+
+*:focus 
+    outline: none
+
+*, ::after, ::before 
+    box-sizing: border-box
+
+
+
+body 
+    font-family: var(--news-primary-font)
+
+    
+// *
+//     border: 0.2px solid red
+
+
+a:hover 
+    opacity: 0.7
+
+.site
+    overflow: hidden
+    
+.site-branding
+    .custom-logo-link
+        +flex
+        height: 100%
+        +flex-align(center)
+        img
+            max-width: 180px
+            max-height: 60px
+            object-fit: contain
+            +md 
+                max-width: 260px
+                max-height: 80px
+
+
+

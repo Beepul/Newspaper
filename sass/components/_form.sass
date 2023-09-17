@@ -1,0 +1,287 @@
+.search_hr_form
+    margin-bottom: $s-34
+    .widget.wpforms-widget
+        // background-color: yellow    
+        form, .wpforms-form
+            .wpforms-head-container
+                display: none
+            .wp-fieldWrap
+                .wp-submitWrap
+                    +flex
+                    // background-color: $white
+                    +flex-align(center)
+                    +flex-dir(column)
+                    gap: $s-16
+                    +sm 
+                        +flex-dir(row)
+                        gap: 0
+                    .wpforms-field-container
+                        flex: 1
+                        width: 100%
+                        padding: 0
+                        +sm 
+                            width: auto
+                        .wpforms-field
+                            label
+                                display: none
+                            input
+                                +radius(0)
+                                background-color: $white
+                                border: 0
+                                width: 100%
+                                padding: 4.5px $s-24
+                                text-align: center
+
+                    .wpforms-submit-container
+                        width: 100%
+                        +sm 
+                            width: auto
+                        button
+                            @extend .btn
+                            width: 100%
+                            +flex-just(center)
+.newsletter_form
+    @extend .search_hr_form
+    margin-bottom: 0 !important
+    .wp-submitWrap
+        +flex-dir(column !important)
+        gap: 0
+        +sm 
+            +flex-dir(row !important)
+        +md
+            +flex-dir(column !important)
+            gap: $s-16 !important
+    .wpforms-head-container
+        display: block !important
+        .wpforms-title
+            color: $text-tertiary
+            @extend %bold 
+            text-transform: uppercase
+            font-size: $font-18
+        .wpforms-description
+            color: $text-tertiary
+            margin-bottom: $s-24
+    .wpforms-field-container
+        width: 100% !important
+        input
+            color: $text-tertiary
+            &::placeholder
+                color: $text-tertiary
+    .wpforms-submit-container
+        width: 100% !important
+        +sm 
+            width: auto !important
+        +md 
+            width: 100% !important
+        // button
+        //     width: 100% !important
+    .wpforms-field
+        +flex 
+        +flex-align(center)
+        gap: $s-20
+        border: 1px solid $text-tertiary
+        padding-left: $s-16
+        span 
+            @extend %display-center
+        label
+            display: flex !important
+            align-items: center
+            justify-content: center
+        input
+            background-color: transparent !important
+            text-align: start !important
+            padding: 4px 0 !important
+
+
+
+.comments-area
+    .comment-respond
+        .comment-reply-title
+        form,.comment-form
+            p
+                margin-bottom: $s-24
+                max-width: 100%
+            .comment-form-content
+                max-height: 200px
+
+            p,.comment-notes
+                span
+                    font-size: $font-16
+                    color: $text-primary
+                    float: unset
+                    margin-right: 0
+                    @extend %regular
+                .required-field-message
+                    .required
+                        color: var(--news-secondary-color)
+                textarea,input
+                    width: 100%
+                    box-sizing: border-box
+                    padding: $s-12 $s-16
+                    +radius(0)
+                    border-color: $text-tertiary
+                textarea
+                    height: 200px
+                    max-width: 100%
+            .comment-form-cookies-consent
+                +flex 
+                +flex-align(center)
+                gap: 10px
+                input
+                    height: 16px 
+                    width: 16px
+                    margin-bottom: 2px
+            .form-submit
+                input[type="submit"]
+                    width: auto
+                    background-color: var(--news-secondary-color)
+                    color: $text-tertiary
+                    cursor: pointer
+                    border-color: var(--news-secondary-color)
+                    &:hover
+                        background-color: transparent 
+                        color: var(--news-secondary-color)
+                    &:focus 
+                        background-color: var(--news-secondary-color) 
+                        color: $text-tertiary
+                        
+
+.contact-form-wrapper
+    background-color: var(--bg, rgba(16, 43, 84, 0.04))
+    padding: $s-32
+    form
+        p
+            margin-bottom: 32px - 12px
+            label
+                font-size: 0
+                width: 100%
+                display: inline-block
+                line-height: 0
+                span
+                    width: 100%
+                    display: inline-block
+                    input
+
+                            /* Chrome, Safari, Edge, Opera */
+                    input::-webkit-outer-spin-button, 
+                    input::-webkit-inner-spin-button 
+                        -webkit-appearance: none
+                        margin: 0
+                    input[type=number]
+                        -moz-appearance: textfield
+                    textarea
+                        margin-top: 12px
+                        max-width: 100%
+                        max-height: 200px 
+                    input,textarea
+                        width: 100%
+                        box-sizing: border-box
+                        font-size: $font-14
+                        padding: $s-16 $s-12
+                        border: 1px solid $text-tertiary
+                        background: $white
+                        +radius(0)
+                        &::placeholder
+                            font-size: $font-14
+                            color: $text-secondary
+            input[type=submit]
+                background-color: var(--news-secondary-color)
+                color: $white
+                text-transform: uppercase
+                padding: 14px 40px
+                border: 1px solid var(--news-secondary-color)
+                +radius(0)
+                font-family: var(--news-primary-font)
+                cursor: pointer
+                &:hover
+                    background-color: $white 
+                    color: var(--news-secondary-color)
+                &:focus 
+                    background-color: var(--news-secondary-color)
+                    color: $white
+
+
+.inquiry-form-wrapper
+    @extend .contact-form-wrapper
+    background-color: transparent !important
+    padding: 0 !important
+    width: 100%
+    +md 
+        width: 90%
+    margin: 0 auto
+    form
+        +flex
+        gap: 24px
+        // flex-wrap: wrap
+        +flex-just(center)
+        +flex-dir(column)
+        +md 
+            +flex-dir(row)
+    p
+        margin-bottom: 0 !important
+        // flex: 1
+        // height: 100%
+    input
+        padding: $s-12 $s-16 !important
+    input[type=submit]
+        padding: 10px 40px !important
+        height: 100%
+        width: 100%
+        +md 
+            width: auto
+
+
+.advance-news-search
+    form,.newspaper-news-search
+        .form-group
+            +flex 
+            +flex-align(center)
+            .input-group
+                border: 1px solid $text-tertiary
+                border-right: 0
+                +radius(4px 0 0 4px)
+                +flex 
+                +flex-align(center)
+                padding: 10px 16px
+                width: calc(100% - 37%)
+                +sm 
+                    width: calc( 100% - 30% )
+                +md 
+                    width: calc(100% - 25%)
+                +lg 
+                    width: calc(100% - 30%)
+                input[type=search],.search-field
+                    height: 100%
+                    color: $text-secondary
+                    border: 0
+                    width: 90%
+                    background-color: transparent
+                    +sm 
+                        width: 100%
+                    &::placeholder
+                        color: $text-secondary
+                button,input[type=submit]
+                    padding: 0
+                    border: 0
+            .dropdown-wrapper
+                background-color: $text-tertiary
+                padding: 0 6px
+                width: 37%
+                +sm 
+                    width: 30% 
+                    padding: 0 20px
+                +md 
+                    width: 25%
+                +lg 
+                    width: 30%
+                
+                select,.cat-dropdown
+                    height: 100%
+                    padding: 13.5px 0
+                    border: 0
+                    background-color: transparent
+                    color: $text-secondary
+                    font-size: $font-16 
+                    font-family: var(--news-primary-font)
+                    width: 100%
+                    option

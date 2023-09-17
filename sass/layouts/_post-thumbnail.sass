@@ -1,0 +1,76 @@
+.post-thumbnail-section
+    margin: $s-60 0 
+    .post-thumbnail,.wp-block-image,.size-large
+        position: relative
+        margin-bottom: $s-48
+        box-shadow: 0px 0px 24px 2px rgba(16, 43, 84, 0.12)
+        &::after
+            content: ''
+            position: absolute
+            inset: 0
+            background: #00000012
+            z-index: 9
+
+        img
+            max-height: 500px
+            object-fit: cover
+            min-height: 350px
+        .btn__video
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+            z-index: 10
+        figcaption
+            text-align: center
+            margin-top: $s-8
+            font-size: $font-14
+            color: $text-secondary
+    .header-wrap
+        margin: 0 auto
+        width: 100%
+        +lg 
+            width: 57%
+        .heading
+            text-align: center
+            br 
+                display: none 
+                +sm 
+                    display: block
+                +lg
+                    display: none
+        .paragraph_wrap
+            p
+                text-align: center
+                .more
+                    display: none
+                a,button,.btn__view__more
+                    padding: 0
+                    display: inline-block
+                    font-size: 0
+                    height: 16px 
+                    width: 16px
+                    +radius(50%)
+                    border: 1px solid $text-secondary
+                    position: relative
+                    transform: translateY(-6px)
+                    &::before
+                        content: ''
+                        top: 50%
+                        left: 50%
+                        transform: translate(-50%,-50%)
+                        position: absolute
+                        display: inline-block
+                        height: 10px
+                        width: 10px
+                        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M1.25 3.625L2.125 2.75L5 5.625L7.875 2.75L8.75 3.625L5 7.375L1.25 3.625Z' fill='%234B4B4B'/%3E%3C/svg%3E")
+                        mask-repeat: no-repeat
+                        background-size: 9px
+                        background-color: $text-secondary
+                        +transition(.3s ease)
+            p.active 
+                .more
+                    display: inline
+                a,button,.btn__view__more
+                    transform: translateY(-4px) rotate(180deg)
+                        

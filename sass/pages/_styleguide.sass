@@ -1,0 +1,401 @@
+.site-main
+    .post-thumbnail
+        // +lg 
+        //     height: 440px
+        img
+            width: 100%
+            // height: 100%
+            object-fit: cover
+    p
+        .drop-cap,span
+            font-size: 144px 
+            @extend %bold 
+            float: left
+            margin-right: 10px
+            line-height: 83%
+            color: var(--news-primary-color)
+        a
+            color: $text-secondary
+            border-bottom: 1px solid #4169E1
+
+    .wp-block-heading
+        border: none
+        &::after
+            display: none
+    ul
+        padding-left: 0
+        +lg 
+            padding-left: $s-32
+        li
+            +flex 
+            // +flex-align(center)
+            gap: $s-6
+            +sm 
+                gap: $s-16
+            &::before
+                content: ''
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M9.43148 0.00205229C9.26727 0.0241004 9.1318 0.141593 9.08654 0.301008C9.04143 0.460567 9.09524 0.631583 9.22361 0.736474L11.3291 2.60794C11.4117 2.68119 11.5202 2.71861 11.6305 2.71194C11.7409 2.70527 11.844 2.65493 11.9172 2.57225C11.9905 2.48957 12.0278 2.38108 12.0211 2.27083C12.0144 2.16045 11.9641 2.05731 11.8814 1.98406L9.78251 0.112599C9.7097 0.0451492 9.61512 0.00598462 9.51605 0.00206702C9.48791 -0.000689006 9.45962 -0.000703738 9.43148 0.00205229ZM0.730317 3.3358C0.620074 3.34088 0.516219 3.38976 0.441952 3.47128C0.36754 3.55294 0.328664 3.66086 0.333885 3.7711C0.338962 3.88149 0.387844 3.9852 0.469508 4.05961C0.551173 4.13388 0.65895 4.17276 0.769333 4.16753H12.1482L9.22392 6.76689C9.0516 6.92122 9.0371 7.18594 9.19143 7.35828C9.34577 7.53062 9.61049 7.54511 9.78282 7.39077L13.5259 4.06352C13.6563 3.94864 13.7014 3.76485 13.639 3.60254C13.5768 3.44037 13.4203 3.33405 13.2465 3.33579H0.769627C0.756572 3.33521 0.743662 3.33521 0.730606 3.33579L0.730317 3.3358Z' fill='%23303030'/%3E%3C/svg%3E")
+                mask-repeat: no-repeat
+                background-color: $text-primary
+                min-height: 16px
+                display: inline-block
+                margin-top: 6px
+                min-height: 16px 
+                max-width: 16px 
+                min-width: 16px
+                width: 16px 
+                transform: translateY(3px)
+               
+        li:not(:last-child)
+            margin-bottom: $s-16
+
+    .wp-block-table
+        overflow-x: auto 
+        table 
+            width: 100%
+            td, tr
+                border: 0
+            tr:first-child
+                background-color: var(--news-primary-color)
+                strong
+                    color: $white
+            td 
+                padding: $s-14 31px
+            tr:nth-of-type(even)
+                background-color: $bg-primary
+    .wp-block-gallery
+        ul, .blocks-gallery-grid
+            padding: 0
+            +flex
+            +flex-align(center)
+            flex-wrap: wrap
+            width: 100%
+            gap: 24px
+            +md 
+                gap: 48px
+            li::before
+                display: none
+            li, .blocks-gallery-item
+                margin: 0
+                flex-basis: 100%
+                +sm
+                    flex-basis: calc(50% - 12px)
+                +md
+                    flex-basis: calc(50% - 24px)
+                figure
+                    width: 100%
+                    margin: 0
+                    img 
+                        width: 100%
+            li:nth-child(2n)
+                margin-right: 0
+                // margin-left: 24px
+    
+            
+    .wp-block-image
+        img
+            width: 100%
+        figcaption
+            text-align: center
+            margin-top: $s-8
+            font-size: $s-14
+            color: $text-secondary
+    .wp-block-media-text
+        box-sizing: border-box
+        direction: ltr
+        display: grid
+        grid-template-rows: auto
+        grid-template-columns: auto
+        gap: $s-20
+        +lg 
+            grid-template-columns: 32% 1fr
+            gap: $s-48
+        figure, .wp-block-media-text__media
+            margin: 0
+            align-self: center
+            img
+                width: 100% 
+            figcaption
+                text-align: center
+                margin-top: $s-8
+                font-size: $s-14
+    .wp-block-media-text.has-media-on-the-right
+        grid-template-columns: auto 
+        +lg 
+            grid-template-columns: 1fr 32%
+        figure, .wp-block-media-text__media
+            grid-column: unset
+            +lg 
+                grid-column: 2
+            grid-row: 1 
+    .entry-footer
+        +flex 
+        +flex-align(center)
+        +flex-just(space-between)
+        flex-wrap: wrap
+        row-gap: $s-24
+        padding-bottom: $s-24 
+        border-bottom: 1px solid $text-tertiary
+        .social-networks
+            padding: 0
+            +flex-align(center)
+            margin-bottom: 0
+            li
+                margin: 0
+                &::before
+                    display: none
+                .share
+                    color: $text-primary
+                    +flex
+                    gap: 4px
+                    width: auto
+        .wp-block-tags-list,.wp-block-tags
+            padding: 0
+            margin: 0
+            +flex
+            +flex-align(center)
+            flex-wrap: wrap
+            gap: $s-6 
+            li
+                margin: 0
+                border: 1px solid $text-tertiary
+                padding: $s-6 $s-16
+                &::before
+                    display: none
+    .post-navigation
+        margin: $s-48 0
+        .nav-links
+            +flex
+            +flex-just(space-between)
+            gap: $s-24
+            flex-wrap: wrap
+            .nav-previous,.nav-next
+                width: 100%
+                +sm
+                    width: auto 
+                .meta-nav
+                    width: 100%
+                    +flex-just(center)
+                    +sm
+                        width: auto 
+                        +flex-just(start)
+            .nav-previous
+                a,.prev
+                    &:hover
+                        opacity: 1
+                    button,.meta-nav
+                        +flex 
+                        +flex-align(center)
+                        gap: $s-16
+                        &::before
+                            content: ''
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8 11L3 6L8 1L9.16667 2.16667L5.33333 6L9.16667 9.83333L8 11Z' fill='white'/%3E%3C/svg%3E")
+                            mask-repeat: no-repeat
+                            background-size: 12px 
+                            height: 14px 
+                            width: 14px 
+                            display: inline-block
+                            background-color: $text-tertiary
+                            +transition(.3s ease)
+                            margin-top: 2px
+                        &:hover 
+                            &::before
+                                background-color: var(--news-primary-color)
+                        &:focus 
+                            &::before
+                                background-color: $text-tertiary
+
+            .nav-next
+                a,.prev
+                    &:hover
+                        opacity: 1
+                    button,.meta-nav
+                        +flex 
+                        +flex-align(center)
+                        gap: $s-16
+                        &::after
+                            content: ''
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8 11L3 6L8 1L9.16667 2.16667L5.33333 6L9.16667 9.83333L8 11Z' fill='white'/%3E%3C/svg%3E")
+                            mask-repeat: no-repeat
+                            background-size: 12px 
+                            height: 14px 
+                            width: 14px 
+                            display: inline-block
+                            background-color: $text-tertiary
+                            +transition(.3s ease)
+                            transform: rotate(180deg)
+                            margin-bottom: 2px
+                        &:hover 
+                            &::after
+                                background-color: var(--news-primary-color)
+                        &:focus 
+                            &::after
+                                background-color: $text-tertiary
+            
+    .navigation.pagination
+        .nav-links
+            +flex 
+            +flex-align(center)
+            gap: $s-12
+            +flex-just(center)
+            flex-wrap: wrap
+            +lg 
+                +flex-just(start)
+                flex-wrap: nowrap
+            .page-numbers
+                color: $text-primary
+                +radius(50%)
+                height: 40px 
+                width: 40px
+                @extend %display-center
+            .page-numbers.current
+                color: $text-tertiary
+                background-color: var(--news-primary-color)
+            .page-numbers.next
+                font-size: 0
+                &::before
+                    content: ''
+                    display: inline-block
+                    height: 11px  
+                    width: 24px
+                    mask-repeat: no-repeat
+                    background-color: var(--news-primary-color)
+                    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12' fill='none'%3E%3Cpath d='M13.6471 0.00307843C13.4008 0.0361506 13.1976 0.212389 13.1297 0.451512C13.062 0.690851 13.1427 0.947374 13.3353 1.10471L16.4935 3.9119C16.6175 4.02178 16.7802 4.07792 16.9456 4.06791C17.1112 4.0579 17.2659 3.9824 17.3757 3.85838C17.4856 3.73436 17.5415 3.57161 17.5315 3.40625C17.5215 3.24067 17.446 3.08597 17.322 2.97609L14.1736 0.168898C14.0644 0.0677238 13.9226 0.00897693 13.7739 0.00310053C13.7317 -0.00103351 13.6893 -0.00105561 13.6471 0.00307843ZM0.595345 5.0037C0.429982 5.01132 0.274199 5.08464 0.162798 5.20692C0.0511796 5.32942 -0.00713337 5.4913 0.000698122 5.65665C0.00831349 5.82224 0.0816364 5.9778 0.204133 6.08942C0.326629 6.20082 0.488295 6.25913 0.65387 6.2513H17.7222L13.3358 10.1503C13.0773 10.3818 13.0555 10.7789 13.287 11.0374C13.5185 11.2959 13.9156 11.3177 14.1741 11.0862L19.7887 6.09528C19.9843 5.92295 20.052 5.64728 19.9584 5.40381C19.8651 5.16056 19.6303 5.00107 19.3697 5.00368H0.65431C0.634728 5.00281 0.615363 5.00281 0.59578 5.00368L0.595345 5.0037Z' fill='%23102B54'/%3E%3C/svg%3E")
+                    // @extend %display-center
+
+#secondary.widget-area
+    +flex 
+    +flex-dir(column)
+    gap: $s-32
+    +lg 
+        gap: $s-48
+    p
+        margin-bottom: 0
+    .wp-block-heading
+        margin-bottom: $s-20
+    .widget.widget_search
+        form
+            label,.wp-block-search__label
+                display: none
+            .wp-block-search__inside-wrapper
+                +flex 
+                +flex-align(center)
+                background-color: $white
+                border: 1px solid var(--text-tertiary, #EFEFEF)
+                padding: 0 $s-8
+                +lg 
+                    padding: 0 $s-20
+            input,.wp-block-search__input
+                padding: $s-8 0
+                width: calc(100% - 18px - 18px)
+                background-color: transparent
+                border: 0
+                border-right:  1px solid var(--text-tertiary, #EFEFEF)
+            button, .wp-block-search__button
+                padding: 0
+                font-size: 0
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 17.5L12.5 12.5M2.5 8.33333C2.5 9.09938 2.65088 9.85792 2.94404 10.5657C3.23719 11.2734 3.66687 11.9164 4.20854 12.4581C4.75022 12.9998 5.39328 13.4295 6.10101 13.7226C6.80875 14.0158 7.56729 14.1667 8.33333 14.1667C9.09938 14.1667 9.85792 14.0158 10.5657 13.7226C11.2734 13.4295 11.9164 12.9998 12.4581 12.4581C12.9998 11.9164 13.4295 11.2734 13.7226 10.5657C14.0158 9.85792 14.1667 9.09938 14.1667 8.33333C14.1667 7.56729 14.0158 6.80875 13.7226 6.10101C13.4295 5.39328 12.9998 4.75022 12.4581 4.20854C11.9164 3.66687 11.2734 3.23719 10.5657 2.94404C9.85792 2.65088 9.09938 2.5 8.33333 2.5C7.56729 2.5 6.80875 2.65088 6.10101 2.94404C5.39328 3.23719 4.75022 3.66687 4.20854 4.20854C3.66687 4.75022 3.23719 5.39328 2.94404 6.10101C2.65088 6.80875 2.5 7.56729 2.5 8.33333Z' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+                mask-repeat: no-repeat
+                width: 18px
+                height: 18px
+                border: 0
+                background-color: var(--news-primary-color)
+                margin-left: $s-18
+                &:hover
+                    background-color: var(--news-secondary-color) 
+    // .widget.widget_newspaper_author_bio_widget
+    //     +flex 
+    //     +flex-dir(column)
+    //     +flex-align(center)
+    //     gap: $s-20
+    //     .wp-block-heading
+    //         width: 100% 
+    //         align-self: left
+    //     a
+    //         height: 120px
+    //         width: 120px
+    //         img 
+    //             +radius(50%)
+    //             height: 100%
+    //             width: 100%
+    //             object-fit: cover
+    //     img
+    //         width: 140px
+    //     span
+    //         @extend %bold 
+    //         font-size: $s-18
+    //     figcaption
+    //         text-align: center
+    //         font-size: $s-14
+    .wp-block-latest-posts__list.wp-block-latest-posts
+        @extend .list__vr__news
+    // .wp-block-social-links
+    //     +flex 
+    //     +flex-align(center)
+    //     flex-wrap: wrap
+    //     +flex-just(space-between)
+    //     gap: $s-20
+    //     .wp-social-link
+    //         @extend .social__sqr
+    //     .wp-social-link-facebook
+    //         background-color: $fb-color
+    //         span
+    //             background-color: $fb-color-100
+    //         &:hover
+    //             background-color: $fb-color-100
+    //             span
+    //                 background-color: $fb-color
+    //     .wp-social-link-instagram
+    //         background-color: $insta-color
+    //         span
+    //             background-color: $insta-color-100 
+    //         &:hover
+    //             background-color: $insta-color-100 
+    //             span
+    //                 background-color: $insta-color 
+    //     .wp-social-link-pinterest
+    //         background-color: $pin-color
+    //         span
+    //             background-color: $pin-color-100 
+    //         &:hover
+    //             background-color: $pin-color-100 
+    //             span
+    //                 background-color: $pin-color 
+    //     .wp-social-link-linkedin
+    //         background-color: $ln-color
+    //         span
+    //             background-color: $ln-color-100 
+    //         &:hover
+    //             background-color: $ln-color-100 
+    //             span
+    //                 background-color: $ln-color 
+    .wp-block-tags-list
+        +flex 
+        +flex-align(center)
+        flex-wrap: wrap
+        gap: $s-22 
+        +lg 
+            gap: $s-6
+        li 
+            border: 1px solid $text-tertiary
+            flex: 1
+            +md 
+                flex: unset
+            &:hover
+                background-color: var(--news-secondary-color)
+                border-color: var(--news-secondary-color)
+                a
+                    color: $white
+            a
+                padding: $s-6 $s-16
+                color: $text-secondary
+                text-align: center
+                display: inline-block
+                width: 100%
+            
+
+
+
+            
+
+

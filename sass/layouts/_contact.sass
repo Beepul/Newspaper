@@ -1,0 +1,70 @@
+.contact-form-section
+    padding: $s-60 0
+    .title_wrap
+        margin-bottom: $s-8 
+        transform: translateX(0)
+        text-align: center
+        +lg  
+            text-align: start
+            transform: translateX(62px)
+        .title
+            text-transform: uppercase
+            &::after 
+                display: block 
+                +lg 
+                    display: none
+    .heading
+        text-transform: uppercase
+        text-align: center
+        +lg  
+            text-align: start
+    p
+        text-align: center
+        +lg  
+            text-align: start
+    .contact-social-wrap
+        h5 
+            text-align: center
+            +lg  
+                text-align: start
+        .social-networks
+            +flex-just(center)
+            +lg 
+                +flex-just(start)
+
+
+.quick-contact
+    background:  rgba(16, 43, 84, 0.04)
+    padding: $s-60 0
+    .quick-contact-wrapper
+        width: 70%
+        margin: 0 auto
+        +flex
+        +flex-dir(column)
+
+        p
+            text-align: center
+        button
+            align-self: center
+            border-color: var(--news-secondary-color)
+            color: var(--news-secondary-color)
+            &:hover
+                color: $white
+            &:focus 
+                color: var(--news-secondary-color)
+        .heading
+            text-align: center
+        
+
+
+.inquiry-section
+    padding: $s-60 0
+    background: var(--bg, rgba(16, 43, 84, 0.04))
+    .inquiry-wrapper
+        margin: 0 auto
+        width: 100%
+        +lg 
+            width: 70% 
+        .heading
+            text-align: center
+            margin-bottom: $s-32

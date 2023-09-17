@@ -1,0 +1,56 @@
+@import '../../css/fonts.css';
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+$primary: #102B54;
+$primary-100: #16396e;
+
+$secondary: #E02A20;
+$secondary-100: #db3a31;
+$white: #FFFFFF;
+
+$bg-grey: #102B540A;
+$bg-primary: rgba(16, 43, 84, 0.08);
+
+$text-tertiary: #EFEFEF;
+$text-primary: #212529;
+$text-secondary: #4B4B4B;
+$text-highlight-blue: #4169E1;
+
+$fb-color: #3E5B98;
+$fb-color-100: #5172B8;
+
+$insta-color: #AE3793;
+$insta-color-100: #CE64B5;
+
+$ln-color: #3371B7;
+$ln-color-100: #508BCE;
+
+$pin-color: #E02A20;
+$pin-color-100: #E7534B;
+
+$secondary-dark-mode: #222221;
+$primary-dark-mode: #131417;
+
+$rating-color: #F9AC00;
+
+
+$box-shadow-color: rgba(0, 0, 0, 0.08);
+$filler-font: "'Monoton'", cursive;
+$primary-font: "'Source Sans 3'", sans-serif;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+    (
+        'news-primary-color': $primary,
+        'news-secondary-color': $secondary,  
+        'news-primary-font': $primary-font,  
+        'news-filler-font': $filler-font
+    ),
+    $theme-colors
+);
+
+:root{
+    @each $color,$value in $theme-colors{
+        --#{$color}: #{$value};
+    }
+}

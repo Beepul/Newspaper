@@ -1,0 +1,59 @@
+.live-wrapper
+    &>.wp-block-heading
+        border-bottom: 1px solid $text-tertiary
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: 100%
+            left: 0
+            height: 2px 
+            width: 120px 
+            background-color: var(--news-secondary-color)
+    .content-wrap
+        .post-image
+            margin-bottom: $s-32
+        .upcomming-lives
+            .wp-block-heading
+                margin: 0
+            .post-wrapper
+                +flex 
+                +flex-dir(column)
+                +md 
+                    +flex-dir(row)
+                .post
+                    padding: $s-24
+                    flex: 1
+                    .archive-content-wrapper
+                        padding: 0 
+                        border: 0
+                        .entry-title
+                            font-size: $font-18
+                .post:not(:last-child)
+                    border-right: 0
+                    border-bottom: 1px solid $text-tertiary
+                    +md 
+                        border-bottom: 0
+                        border-right: 1px solid $text-tertiary
+
+                .post:first-child
+                    padding-left: $s-24 
+                    +md 
+                        padding-left: 0
+                .post:last-child
+                    padding-left: $s-24 
+                    +md 
+                        padding-right: 0
+    .content-wrap-main
+        margin-bottom: 0 !important
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 48px
+        margin-bottom: 0
+        +md 
+            grid-template-columns: repeat(2, 1fr) !important
+        +lg
+            grid-template-columns: repeat(3, 1fr) !important
+    .btn__load_more
+        +flex 
+        +flex-just(center)

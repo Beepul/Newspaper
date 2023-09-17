@@ -1,0 +1,464 @@
+$white-shadow: 0px 4px 8px 0px rgba(238, 238, 238, 0.08)
+// body
+//     +transition(.3s ease-in-out)
+*
+    +transition(.3s ease)
+
+body.active
+    +in-dark(bg,$primary-dark-mode)
+
+    p,h1,h2,h3,h4,h5,h6,a,li,td,cite,figcaption,span,div
+        +in-dark(color,$text-tertiary)
+
+    a:hover 
+        opacity: 0.8
+    .heading
+        span
+            +in-dark(color, var(--news-secondary-color))
+    .wp-block-quote
+        +in-dark(bg,$text-secondary)
+        cite
+            &::before
+                +in-dark(bg,$text-tertiary)
+
+    .btn__night__mode
+        +in-dark(bg,$text-tertiary)
+
+    .cat-item::before
+        +in-dark(bg, $text-tertiary)
+
+    .site-main ul li::before
+        +in-dark(bg, $text-tertiary)
+
+    .select-options
+        background-color: $secondary-dark-mode
+        box-shadow: $white-shadow
+        li
+            color: $white
+            &:hover
+                background-color: var(--news-secondary-color)
+    .tab-button
+        +in-dark(color, $text-tertiary)
+    .btn__view
+        svg 
+            path 
+                +in-dark(fill, $text-tertiary)
+    .btn__live
+        span 
+            +in-dark(color, var(--news-secondary-color))
+    .rdv__list 
+        .user
+            a::before
+                +in-dark(bg, $text-tertiary)
+    .btn__outline
+        border-color: $text-tertiary
+        +in-dark(color, $text-tertiary)
+        path
+            +in-dark(fill, $text-tertiary)
+    .btn__view__more
+        border-color: $text-tertiary !important
+        &::before
+           +in-dark(bg, $text-tertiary) 
+    .comments-area .comment-list li,.comment .comment-metadata a time
+        +in-dark(color, $text-tertiary)
+                                
+
+    .sidebar
+        +in-dark(bg, $primary-dark-mode)
+        .sidebar-header
+            +in-dark(bg, $primary-dark-mode)
+            .sidebar-close::after
+                +in-dark(bg, $text-tertiary)
+        .menu-item
+            a
+                path
+                    +in-dark(fill, $text-tertiary)
+        .angle-down
+            &::after
+                +in-dark(bg, $text-tertiary)
+    .sidebar.desktop
+        .contact-info li a svg path 
+            +in-dark(fill, $text-tertiary)
+
+        .sidebar-footer
+            +in-dark(bg, $primary-dark-mode)
+
+                    
+    .site-header.style-one 
+        .header-top
+            +in-dark(bg, $primary-100)
+        .header-mid
+            box-shadow: $white-shadow
+        .desktop-header
+            +in-dark(bg, $secondary-dark-mode)
+            box-shadow: $white-shadow
+            .main-navigation
+                .menu-item
+                    a
+                        path
+                            +in-dark(fill,$text-tertiary)
+                    &::after
+                        +in-dark(bg, $text-tertiary)
+                    &:hover
+                        a
+                            opacity: 0.7
+                            path
+                                +in-dark(fill,$text-tertiary)
+                        &::after
+                            opacity: 0.7
+                .menu-item.menu-item-has-children
+                    &::after
+                        +in-dark(bg, $text-tertiary)
+                    &:hover 
+                        &::after
+                            opacity: 0.7
+                    .sub-menu
+                        box-shadow: $white-shadow
+                        .menu-item
+                            &:hover
+                                a
+                                    +in-dark(color, var(--news-secondary-color))
+                            a 
+                                +in-dark(color, $text-secondary)
+                                opacity: 1
+                        .menu-item.menu-item-has-children
+                            &::after
+                                +in-dark(bg, $text-secondary)
+                            &:hover
+                                &::after
+                                    +in-dark(bg, var(--news-secondary-color))
+                            .sub-menu
+                                .menu-item
+                                    &:hover
+                                        a
+                                            +in-dark(color, var(--news-secondary-color))
+                                    a
+                                        +in-dark(color, $text-secondary)
+
+        .bars 
+            &:hover
+                opacity: 0.7
+            .bar
+                background-color: $white
+        .btn__href
+            path
+                stroke: $white
+            &:hover
+                opacity: 0.7
+
+    .newsletter_form
+        .wpforms-head-container
+            .wpforms-title,.wpforms-description
+                +in-dark(color, $text-tertiary)
+        .wpforms-field-container
+            .wpforms-field input::placeholder
+                +in-dark(color, $text-tertiary)
+    .latest_tech
+        .bottom
+            .rdv__bookmark
+                .bookmark
+                    button 
+                        path
+                            +in-dark(fill, $text-tertiary)
+    .current_trending
+        .small_news_card
+            box-shadow: $white-shadow
+    .entry-meta .article_details span::before
+        +in-dark(bg, $text-tertiary)
+    .author-section .social-networks li svg path
+        +in-dark(fill, $text-tertiary)
+    .page-numbers
+        +in-dark(bg, $text-tertiary)
+        +in-dark(color, var(--news-primary-color))
+    .page-numbers.current
+        +in-dark(bg, var(--news-primary-color))
+        +in-dark(color, $text-tertiary)
+    .author-tweet-card
+        p a
+            +in-dark(color, $text-highlight-blue)
+        .article-comment,.article-retweet,.article-like
+            &::before
+                +in-dark(bg, $text-tertiary)
+        .show
+            +in-dark(color, $text-highlight-blue)
+        .article-share svg path
+            +in-dark(fill, $text-tertiary)
+    .grid-quote-wrap
+        blockquote
+            +in-dark(bg, transparent)
+    .contact-form-wrapper
+        +in-dark(bg, $secondary-dark-mode)
+    .quick-contact,.inquiry-section
+        +in-dark(bg, $secondary-dark-mode)
+    .accordion
+        .accordion-button span
+            +in-dark(color, $text-primary)
+        .accordion-button.active span
+            +in-dark(color, var(--news-primary-color))
+        .accordion-content p
+            +in-dark(color, $text-secondary)
+    .faq-section.gray-bg
+        +in-dark(bg, $secondary-dark-mode)
+    .pricing-card
+        +in-dark(bg, $secondary-dark-mode)
+        box-shadow: $white-shadow
+        .pricing-tag
+            +in-dark(bg, var(--news-primary-color))
+        ul li::before
+            +in-dark(bg, $text-tertiary)
+    .progress-bar-wrapper
+        .value-container 
+            .value, .text
+                +in-dark(color, $text-primary)
+            // +in-dark(bg, $primary-dark-mode)
+    .pros-cons
+        +in-dark(bg, $secondary-dark-mode)
+        .pros ul li::before
+            +in-dark(bg, $text-highlight-blue)
+        .cons ul li::before
+            +in-dark(bg, var(--news-secondary-color))
+    .social-networks .share::after
+        +in-dark(bg, $text-tertiary)
+    .advance-news-search
+        input,input::placeholder
+            +in-dark(color, $text-tertiary)
+        button svg path 
+            stroke: $text-tertiary !important
+    .site-header
+        .custom-logo
+            display: none
+        .custom-logo-forDark
+            display: block
+        // .menu
+        //     .menu-item
+        //         &:hover 
+        //             a 
+        //                 path 
+        //                     fill: $text-tertiary !important
+    .site-header.style-one
+        .desktop-header
+            .menu
+                .menu-item
+                    &:hover 
+                        &>a path 
+                            +in-dark(fill, $text-tertiary)
+        .mobile-header
+            +in-dark(bg, $secondary-dark-mode)
+            box-shadow: $white-shadow
+    .site-header.style-two
+        .header-top
+            +in-dark(bg, var(--news-primary-color))
+            .top__left
+                .custom-select
+                    .icon svg path
+                        +in-dark(fill, $text-tertiary)
+                    .select-text 
+                        +in-dark(color, $text-tertiary)
+                        &::after
+                            +in-dark(bg, $text-tertiary)
+                    .select-options
+                        li:hover 
+                            +in-dark(bg, var(--news-primary-color))
+        .header-mid
+            .mid-left
+                svg path
+                    +in-dark(fill, $text-tertiary)
+        .desktop-header
+            .menu
+                .menu-item
+                    &:hover 
+                        a
+                            +in-dark(color, $text-tertiary)
+                .menu-item-has-children
+                    &::after
+                       +in-dark(bg, $text-tertiary)  
+                    .sub-menu
+                        .menu-item
+                            a
+                                +in-dark(color, $text-primary)
+                            &:hover 
+                                a
+                                    +in-dark(color, $text-primary)
+                        .menu-item-has-children
+                            &::after
+                                +in-dark(bg, $text-primary)  
+                            .sub-menu
+                                .menu-item
+                                    a
+                                        +in-dark(color, $text-primary)
+                                    &:hover 
+                                        a
+                                            +in-dark(color, $text-primary)
+    .site-header.style-three
+        .header-top 
+            +in-dark(bg, $secondary-dark-mode)
+        .header-mid
+            .mid-left
+                .custom-select
+                    .icon svg path
+                        +in-dark(fill, $text-tertiary)
+                    .select-text 
+                        +in-dark(color, $text-tertiary)
+                        &::after
+                            +in-dark(bg, $text-tertiary)
+                    .select-options
+                        li:hover 
+                            +in-dark(bg, var(--news-primary-color))
+            .mid-right
+                svg path
+                    +in-dark(fill, $text-tertiary)
+        .desktop-header
+            +in-dark(bg, $secondary-dark-mode)
+            box-shadow: $white-shadow
+            .bar
+                +in-dark(bg, $text-tertiary)
+            .menu
+                .menu-item
+                    &>a path
+                        +in-dark(fill, $text-tertiary)
+                    &:hover 
+                        a
+                            +in-dark(color, $text-tertiary)
+                            path
+                                +in-dark(fill, $text-tertiary)
+                .menu-item-has-children
+                    &::after
+                       +in-dark(bg, $text-tertiary)  
+                    .sub-menu
+                        .menu-item
+                            a
+                                +in-dark(color, $text-primary)
+                            &:hover 
+                                a
+                                    +in-dark(color, var(--news-secondary-color))
+                        .menu-item-has-children
+                            &::after
+                                +in-dark(bg, $text-primary)  
+                            &:hover 
+                                &::after 
+                                    +in-dark(bg, var(--news-secondary-color))
+                            .sub-menu
+                                .menu-item
+                                    a
+                                        +in-dark(color, $text-primary)
+                                    &:hover 
+                                        a
+                                            +in-dark(color, var(--news-secondary-color))
+        .mobile-header
+            +in-dark(bg, var(--news-primary-color))
+            .bar
+                +in-dark(bg, $text-tertiary)
+    .site-header.style-four
+        .header-top 
+            +in-dark(bg, $secondary-dark-mode)
+            .top__left
+                .header-search-container
+                    .btn__href
+                        box-shadow: $white-shadow
+                        +in-dark(bg, $text-tertiary)
+                        svg path
+                            stroke: $text-primary
+        .header-mid
+            .forcast__logo svg path
+                fill: $text-tertiary    
+        .desktop-header
+            .custom-select
+                .select-options
+                    li:hover 
+                        +in-dark(bg, var(--news-primary-color))
+            .nav-left,.nav-right
+                .menu
+                    .menu-item
+                        &:hover 
+                            a
+                                +in-dark(color, var(--news-primary-color))
+                    .menu-item-has-children
+                        .sub-menu
+                            .menu-item
+                                a
+                                    +in-dark(color, $text-primary)
+                                &:hover 
+                                    a
+                                        +in-dark(color, $text-tertiary)
+                            .menu-item-has-children
+                                .sub-menu
+                                    .menu-item
+                                        a
+                                            +in-dark(color, $text-primary)
+                                        &:hover 
+                                            a
+                                                +in-dark(color, $text-tertiary)
+                                    .menu-item-has-children
+                                        .sub-menu
+                                            .menu-item
+                                                a
+                                                    +in-dark(color, $text-primary)
+                                                &:hover 
+                                                    a
+                                                        +in-dark(color, $text-tertiary)
+
+    .site-header.style-five
+        .news-ticker
+            .ticker-title
+                +in-dark(color, var(--news-secondary-color))
+        .desktop-header
+            .btn__href
+                svg path
+                    +in-dark(fill, $text-primary)
+            a,span
+                +in-dark(color, $text-primary)
+            .header-search-container
+                .btn__href
+                    svg path
+                        +in-dark(fill, transparent)
+                        stroke: $text-primary !important
+            .btn__night__mode.active
+                +in-dark(bg, $text-secondary)
+            .menu
+                .menu-item
+                    &:hover 
+                        a
+                            +in-dark(color, var(--news-secondary-color))
+                .menu-item-has-children
+                    .sub-menu
+                        .menu-item
+                            a
+                                +in-dark(color, $text-primary)
+                            &:hover 
+                                a
+                                    +in-dark(color, var(--news-secondary-color))
+                        .menu-item-has-children
+                            &::after
+                                +in-dark(bg, $text-primary) 
+                            &:hover 
+                                &::after 
+                                    +in-dark(bg, var(--news-secondary-color)) 
+                            .sub-menu
+                                .menu-item
+                                    a
+                                        +in-dark(color, $text-primary)
+                                    &:hover 
+                                        a
+                                            +in-dark(color, var(--news-secondary-color))
+                                .menu-item-has-children
+                                    &::after
+                                        +in-dark(bg, $text-primary) 
+                                    &:hover 
+                                        &::after 
+                                            +in-dark(bg, var(--news-secondary-color)) 
+                                    .sub-menu
+                                        .menu-item
+                                            a
+                                                +in-dark(color, $text-primary)
+                                            &:hover 
+                                                a
+                                                    +in-dark(color, var(--news-secondary-color))
+            .sidebar.desktop
+                .mega-menu-wrapper,.contact-info-wrapper
+                    ul li a 
+                        +in-dark(color, $text-tertiary)
+        .mobile-header
+            .btn__night__mode.active
+                +in-dark(bg, $text-secondary)
+
+        

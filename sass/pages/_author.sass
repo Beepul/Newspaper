@@ -1,0 +1,55 @@
+.author
+    .page-grid
+        padding-top: 48px
+        .wp-block-heading
+            padding-top: 0
+            border-bottom: 1px solid $text-tertiary
+            &::after
+                display: block
+                width: 18%
+    .author-section
+        border-bottom: 0
+        padding-top: $s-48 
+        padding-bottom: 0
+        .author-wrapper
+            +flex-dir(column)
+            .author-content-wrap
+                +flex
+                column-gap: 40px
+                row-gap: $s-24
+                +flex-dir(column)
+                +md 
+                    +flex-dir(row)
+                .author-content
+                    .social-networks
+                        +flex 
+                        gap: $s-16
+                        li
+                            +flex
+                            +flex-align(center)
+                            a
+                                height: 28px 
+                                width: 28px 
+                                @extend %display-center
+                                +radius(50%)
+                                svg 
+                                    transform: scale(1)
+                                    path
+                                        fill: $white
+                            .facebook
+                                background-color: $fb-color
+                                &:hover
+                                    background-color: $fb-color-100
+
+                            .instagram
+                                background-color: $insta-color
+                                &:hover 
+                                    background-color: $insta-color-100
+                            .linkedin
+                                background-color: $ln-color
+                                &:hover
+                                    background-color: $ln-color-100
+                            .pinterest
+                                background-color: $pin-color
+                                &:hover
+                                    background-color: $pin-color-100

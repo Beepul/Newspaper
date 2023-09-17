@@ -1,0 +1,63 @@
+.single.single-post
+    .site-main
+        ul
+            margin-bottom: $s-48
+    .post-image
+        margin-bottom: $s-48
+    .post-thumbnail
+        margin-bottom: $s-24
+        img
+            height: 340px
+            +md 
+                height: 440px
+        figcaption
+            font-size: $font-14
+            color: $text-secondary
+            text-align: center
+            margin-top: $s-8
+    .post-thumbnail,.wp-block-image,.size-large
+        position: relative
+        .btn__video
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+    .wp-block-image.size-large
+        margin-bottom: $s-24
+    .entry-header
+        .category-wrap
+            margin-bottom: $s-24
+    .bold-list
+        margin-bottom: $s-48
+    h2.wp-block-heading 
+        text-transform: capitalize
+        margin-bottom: $s-24
+    .ads_hr 
+        margin-bottom: $s-48
+        .ads_hr_wrap
+            br 
+                display: block
+                +xs
+                    display: none 
+    .wp-block-table 
+        margin-bottom: $s-48 
+        table
+            margin-top: 0
+
+    // ul 
+    //     margin-bottom: 0
+    .list-wrap
+        ul
+            margin-bottom: 0
+    .related-post
+        .section__heading
+            margin: $s-48 0
+    .content-wrap-main
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 48px
+        +md
+            grid-template-columns: repeat(2, 1fr)
+        .post
+            .post-thumbnail
+                margin-bottom: 0

@@ -1,0 +1,37 @@
+.archive.layout-grid
+    .site-main
+        display: block
+    .content-wrap-main
+        margin-bottom: $s-48
+        .post
+    .btn__load_more
+        +flex 
+        +flex-just(center)
+        
+.archive.layout-flow
+    .site-main
+        display: block
+    .content-wrap-main
+        margin-bottom: calc($s-48 - 32px)
+        .post
+            +flex
+            gap: $s-32 
+            padding: $s-32 0
+            +flex-dir(column)
+            +md
+                +flex-dir(row)
+            &:not(:last-child) 
+                border-bottom: 1px solid $text-tertiary
+            .bookmark
+                top: 48px 
+                right: calc(100% - 38px)
+            .post-thumbnail
+                height: 100%
+                a
+                    height: 100%
+                    img
+                        height: 100%
+            .archive-content-wrapper
+                border: 0
+                padding: 0
+    

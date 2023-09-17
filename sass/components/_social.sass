@@ -1,0 +1,109 @@
+.social-networks
+    +flex 
+    gap: $s-16
+    li
+        +flex
+        +flex-align(center)
+        a
+            height: 28px 
+            width: 28px 
+            @extend %display-center
+            +radius(50%)
+            color: $white
+            gap: 4px
+        .share
+            // margin-right: 12px
+            width: auto
+            &::after
+                content: ''
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M18 22.5C17.1667 22.5 16.4583 22.2083 15.875 21.625C15.2917 21.0417 15 20.3333 15 19.5C15 19.3833 15.0083 19.2623 15.025 19.137C15.0417 19.0123 15.0667 18.9 15.1 18.8L8.05 14.7C7.76667 14.95 7.45 15.1457 7.1 15.287C6.75 15.429 6.38333 15.5 6 15.5C5.16667 15.5 4.45833 15.2083 3.875 14.625C3.29167 14.0417 3 13.3333 3 12.5C3 11.6667 3.29167 10.9583 3.875 10.375C4.45833 9.79167 5.16667 9.5 6 9.5C6.38333 9.5 6.75 9.57067 7.1 9.712C7.45 9.854 7.76667 10.05 8.05 10.3L15.1 6.2C15.0667 6.1 15.0417 5.98767 15.025 5.863C15.0083 5.73767 15 5.61667 15 5.5C15 4.66667 15.2917 3.95833 15.875 3.375C16.4583 2.79167 17.1667 2.5 18 2.5C18.8333 2.5 19.5417 2.79167 20.125 3.375C20.7083 3.95833 21 4.66667 21 5.5C21 6.33333 20.7083 7.04167 20.125 7.625C19.5417 8.20833 18.8333 8.5 18 8.5C17.6167 8.5 17.25 8.429 16.9 8.287C16.55 8.14567 16.2333 7.95 15.95 7.7L8.9 11.8C8.93333 11.9 8.95833 12.0123 8.975 12.137C8.99167 12.2623 9 12.3833 9 12.5C9 12.6167 8.99167 12.7373 8.975 12.862C8.95833 12.9873 8.93333 13.1 8.9 13.2L15.95 17.3C16.2333 17.05 16.55 16.854 16.9 16.712C17.25 16.5707 17.6167 16.5 18 16.5C18.8333 16.5 19.5417 16.7917 20.125 17.375C20.7083 17.9583 21 18.6667 21 19.5C21 20.3333 20.7083 21.0417 20.125 21.625C19.5417 22.2083 18.8333 22.5 18 22.5Z' fill='%23212529'/%3E%3C/svg%3E")
+                mask-repeat: no-repeat
+                background-size: 24px
+                height: 25px 
+                min-width: 25px 
+                display: inline-block
+                background-color: $text-secondary
+                +transition(.3s ease)
+        .facebook
+            background-color: $fb-color
+            &:hover
+                background-color: $fb-color-100
+
+        .instagram
+            background-color: $insta-color
+            &:hover 
+                background-color: $insta-color-100
+        .linkedin
+            background-color: $ln-color
+            &:hover
+                background-color: $ln-color-100
+        .pinterest
+            background-color: $pin-color
+            &:hover
+                background-color: $pin-color-100
+
+.social__sqr
+    background-color: $fb-color
+    display: inline-block
+    width: 100%
+    +sm
+        width: calc(50% - 10px)
+    +lg 
+        width: 100% 
+    +xxxl 
+        width: calc(50% - 10px)
+    a
+        +flex 
+        +flex-align(center)
+        +flex-just(center)
+        color: $white
+        padding: 14px 0px
+        gap: $s-4 
+
+        span
+            margin-left: $s-8
+            font-size: $font-12
+            padding: 0 6px
+            
+
+.wp-block-social-links
+    +flex 
+    +flex-align(center)
+    flex-wrap: wrap
+    +flex-just(space-between)
+    gap: $s-20
+    .wp-social-link
+        @extend .social__sqr
+        
+    .wp-social-link-facebook
+        background-color: $fb-color
+        span
+            background-color: $fb-color-100
+        &:hover
+            background-color: $fb-color-100
+            span
+                background-color: $fb-color
+    .wp-social-link-instagram
+        background-color: $insta-color
+        span
+            background-color: $insta-color-100 
+        &:hover
+            background-color: $insta-color-100 
+            span
+                background-color: $insta-color 
+    .wp-social-link-pinterest
+        background-color: $pin-color
+        span
+            background-color: $pin-color-100 
+        &:hover
+            background-color: $pin-color-100 
+            span
+                background-color: $pin-color 
+    .wp-social-link-linkedin
+        background-color: $ln-color
+        span
+            background-color: $ln-color-100 
+        &:hover
+            background-color: $ln-color-100 
+            span
+                background-color: $ln-color 

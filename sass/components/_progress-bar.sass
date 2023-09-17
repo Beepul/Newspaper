@@ -1,0 +1,46 @@
+
+.circular-progress
+    position: relative
+    height: 112px
+    width: 112px
+    border-radius: 50%
+    display: grid
+    place-items: center
+
+.circular-progress::before
+    content: ''
+    position: absolute
+    height: 89%
+    width: 89%
+    background-color: $white
+    border-radius: 50%
+
+.value-container
+    position: relative
+    height: 100%
+    width: 100%
+    @extend %display-center
+    +flex-dir(column)
+    .value
+        font-size: $font-18
+        @extend %bold
+        color: $text-primary
+    .text
+        font-size: $font-14
+        @extend %semi-bold
+        color: $text-secondary
+    .star-rating
+        height: 12px
+        min-width: 60px 
+        max-width: 60px
+        &::before
+            height: 12px
+            min-width: 12px
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6 1L7.12257 4.45492H10.7553L7.81636 6.59017L8.93893 10.0451L6 7.90983L3.06107 10.0451L4.18364 6.59017L1.24472 4.45492H4.87743L6 1Z' fill='%23F9AC00'/%3E%3C/svg%3E")
+        &::after 
+            height: 12px
+            min-width: 12px
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M11 4.62L7.405 4.31L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635L9.09 10.5L8.275 6.985L11 4.62ZM6 7.7L4.12 8.835L4.62 6.695L2.96 5.255L5.15 5.065L6 3.05L6.855 5.07L9.045 5.26L7.385 6.7L7.885 8.84L6 7.7Z' fill='%23F9AC00'/%3E%3C/svg%3E")
+
+            
+    

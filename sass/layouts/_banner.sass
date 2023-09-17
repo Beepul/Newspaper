@@ -1,0 +1,319 @@
+.banner
+    margin-top: calc($s-32 - 24px)
+    .banner-slider
+        margin-bottom: $s-12
+        .news__card__img
+            img
+                min-height: 450px
+
+
+
+.banner.style-two
+    margin-top: $s-32
+    margin-bottom: $s-32
+
+    .banner-slider
+        height: 100%
+        .news__card__img
+            height: 100%
+    .banner-right
+        +flex 
+        +flex-dir(column)
+        gap: $s-24
+        .banner-right-top
+            +flex 
+            gap: $s-24
+            +flex-dir(column)
+            +sm
+                +flex-dir(row)
+            .news__card__img
+                img 
+                    height: 288px
+                .news__img__content
+                    .top
+                    .bottom
+                        gap: 8px
+        .banner-right-bottom
+            .news__card__img
+                img 
+                    height: 288px
+                .news__img__content
+                    .top
+                    .bottom
+                        gap: 8px
+
+
+.banner.style-three
+    .banner-slider
+        margin: $s-32 0
+        .banner-slider-left
+            .news__card__img
+                .news__img__content
+                    .bottom
+                        background: rgba(0, 0, 0, 0.64)
+                        padding: $s-24
+                        .title
+                            font-size: 24px
+                            +md 
+                                font-size: 34px
+                            +lg 
+                                font-size: 40px
+        .banner-slider-right
+            +flex 
+            gap: $s-24 
+            height: 100%
+            +flex-dir(column)
+            +sm 
+                +flex-dir(row)
+            .post
+                max-height: 100%
+                height: 440px 
+                +sm 
+                    height: 500px
+                +md 
+                    height: 400px
+                +lg 
+                    height: auto
+                .image
+                    height: 60%
+                    +xxxl
+                        height: 67%
+
+                .post-thumbnail
+                    height: 100%
+                    a 
+                        height: 100%
+                        display: inline-block
+                        width: 100%
+                        img 
+                            // min-height: 336px
+                            width: 100%
+                            height: 100%
+                            max-height: 100%
+                .archive-content-wrapper
+                    border: 0
+                    padding-left: 0
+                    padding-right: 0
+                    padding-bottom: 0
+                    height: calc(100% - 60%)
+                    +xxxl
+                        height: calc(100% - 67%)
+    .tab__wrapper
+        .tab__btn__wrapper
+            +flex 
+            +flex-just(space-between)
+            border-bottom: 1px solid $text-tertiary
+            flex-wrap: wrap
+            row-gap: $s-18
+            .tab__btn__con
+                +flex-just(start)
+                border-bottom: 0
+                gap: $s-18
+                +sm 
+                    gap: $s-28
+                +lg 
+                    gap: $s-60
+            .btn__view
+                font-size: $font-16 
+                +sm 
+                    font-size: $font-18
+
+        .tab-content
+            margin: $s-48 0
+            .content-wrapper
+                display: grid
+                grid-template-columns: repeat(1, 1fr)
+                grid-gap: 48px
+                +md 
+                    grid-template-columns: repeat(2, 1fr)
+                +lg
+                    grid-template-columns: repeat(3, 1fr)
+                .post
+                    .post-thumbnail
+                        img
+                            height: 300px 
+                            max-height: 300px
+                            +sm 
+                                height: auto
+                    .archive-content-wrapper
+                        padding-left: 0
+                        padding-right: 0
+                        padding-bottom: 0
+                        border: 0
+                        .entry-content
+                            +flex 
+                            +flex-align(center)
+                            margin-bottom: $s-12
+                            .category-wrap
+                                margin-bottom: 0
+                                .category-list
+                                    a
+                                        color: $text-secondary
+                                        @extend %bold
+                            .entry-meta
+                                .blog__date
+                                    &::before
+                                        content: '/'
+                                        background-image: none
+                                        height: auto
+                                        width: auto
+
+
+.banner.style-four
+    margin: $s-32 0
+    height: 580px 
+    +sm 
+        height: 720px
+    .main-swipper
+      width: 100%
+      margin-left: auto
+      margin-right: auto
+      height: 580px 
+      +sm 
+        height: 720px
+      .swiper-slide
+        .banner-item
+            position: relative
+            height: 100%
+            img 
+                height: 100%
+                object-fit: cover
+            .banner-content
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%)
+                background-repeat: no-repeat
+                +flex 
+                +flex-just(center)
+                padding-top: calc( 124px / 3 )
+                +sm 
+                    padding-top: 124px
+                .content-wrap
+                    +flex 
+                    +flex-align(center)
+                    +flex-dir(column)
+                    .cat-wrap
+                        margin-bottom: 8px
+                        .cat
+                            color: $white 
+                            background-color: var(--news-secondary-color)
+                            padding: 4px 10px
+                            font-size: $font-14 
+                            @extend %bold 
+                    .heading
+                        text-align: center
+                        color: $white
+                        margin-bottom: $s-18 
+                        +sm 
+                            margin-bottom: $s-32
+                         
+    .swipper-toggler-wrap
+        background: rgba(0, 0, 0, 0.64)
+        padding: 32px 0
+        transform: translateY(-100%)
+        position: relative
+        z-index: 9
+        .main-swipper-toggler
+            height: 206px 
+            +sm 
+                height: calc(166px - 64px)
+            .swiper-slide
+                border-top: 4px solid $text-secondary
+                position: relative
+                &::after
+                    content: ''
+                    position: absolute
+                    top: -4px
+                    left: 0
+                    height: 4px 
+                    width: 0%
+                    display: inline-block
+                    transition: .6s ease
+                    z-index: 10
+                    background-color: $white
+            .swiper-slide-thumb-active
+                &::after
+                    width: 100%
+                .toggler-content
+                    .image
+                        border-width: 3px
+                        img
+                            filter: brightness(0.8)
+            .toggler-content
+                height: 100%
+                padding-top: 20px
+                +flex 
+                gap: 16px
+                cursor: pointer
+                padding-right: 8px
+                +flex-dir(column)
+                +sm 
+                    +flex-dir(row)
+                .image
+                    // width: 82px
+                    border: 0px solid $white
+                    +transition(.3s ease)
+                    height: 50%
+                    +sm 
+                        height: 100%
+                    img
+                        height: 100%
+                        object-fit: cover
+                        filter: brightness(1)
+                        +transition(.3s ease)
+                .content-wrapper
+                    p
+                        color: $white
+                        @extend %bold
+                        text-transform: capitalize
+                        margin-bottom: 0
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        display: -webkit-box
+                        -webkit-line-clamp: 2
+                        -webkit-box-orient: vertical
+                        font-size: $font-14
+                        +sm 
+                            font-size: $font-16 
+                    .rdv__bookmark
+                        ul li 
+                            color: $white
+                            font-size: $font-12
+                            +sm 
+                                font-size: $font-14
+    .swiper-button-next
+        right: 4px
+        +sm 
+            right: 44px
+    .swiper-button-prev
+        left: 4px
+        +sm
+            left: 44px
+
+    
+    // .mySwiper2 
+    //   height: 80%
+    //   width: 100%
+
+    // .mySwiper 
+    //   height: 20%
+    //   box-sizing: border-box
+    //   padding: 10px 0
+    
+    // .mySwiper .swiper-slide 
+    //   width: 25%
+    //   height: 100%
+    //   opacity: 0.4
+    
+    // .mySwiper .swiper-slide-thumb-active 
+    //   opacity: 1
+    
+    // .swiper-slide img 
+    //   display: block
+    //   width: 100%
+    //   height: 100%
+    //   object-fit: cover
+    

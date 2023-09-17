@@ -1,0 +1,62 @@
+.author-img
+    img
+
+        height: 100px 
+        min-width: 100px 
+        width: 100px 
+        object-fit: cover
+        +radius(50%)
+
+
+
+.author-section
+    padding: $s-24 0
+    border-bottom: 1px solid $text-tertiary
+    .author-wrapper
+        +flex
+        gap:$s-24
+        +flex-dir(column)
+        +md 
+            +flex-dir(row)
+        .author-img
+            @extend %display-center
+        p
+            text-align: center 
+            +md 
+                text-align: start
+        .author-wrap
+            +flex 
+            +flex-align(center)
+            +flex-just(center)
+            +flex-dir(column)
+            +md 
+                +flex-dir(row)
+                +flex-just(start)
+            .author-name
+                padding-right: $s-12 
+            .author-signature>span
+                border-left: 1.5px solid $text-secondary
+                padding-left: $s-12
+                a 
+                    color: $text-secondary
+    .social-networks
+        padding: 0
+        margin-bottom: 0 !important
+        +flex-just(center)
+        +md 
+            +flex-just(start)
+        li
+            margin-bottom: 0 !important
+            &::before
+                display: none
+            a
+                background-color: transparent 
+                padding: 0
+                height: auto 
+                width: auto
+                &:hover
+                    background-color: transparent
+                svg 
+                    transform: scale(1.2) 
+                path
+                    fill: $text-primary

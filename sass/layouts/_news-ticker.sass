@@ -1,0 +1,58 @@
+.news-ticker
+    margin-top: $s-32
+    .news_ticker_container
+        +flex 
+        +flex-align(center)
+        .breaking__news
+            background-color: var(--news-secondary-color)
+            color: $text-tertiary
+            padding: $s-14 $s-16
+            +flex 
+            +flex-align(center)
+            +flex-just(center)
+            gap: $s-8
+            @extend %bold
+            min-width: auto
+            +md 
+                padding: $s-8 $s-16
+                min-width: 179px
+            .ticker-title
+                display: none 
+                +md 
+                    display: block
+
+            
+
+
+    .news-ticker-slider
+        border: 1px solid $text-tertiary
+        overflow-x: hidden
+        border-left: 0
+ 
+        .breaking_news_list
+            // transform: translateX(100%)
+            // +flex
+            animation: ticker var(--animation-duration) linear infinite
+            white-space: nowrap
+            &:hover
+                animation-play-state: paused
+            .news
+                padding: 7px $s-12
+                // flex: 1
+                display: inline-block
+
+                a 
+                    display: block
+                    padding-right: $s-16 + $s-12
+                    border-right: 1px solid $text-secondary
+                    color: $text-secondary
+                
+
+@keyframes ticker 
+    0%
+        transform: translateX(100%)
+        opacity: 0
+    3%
+        opacity: 1
+    100%
+        transform: translateX(-115%)

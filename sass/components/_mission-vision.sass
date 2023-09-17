@@ -1,0 +1,43 @@
+.mission-vision-section
+    display: block 
+    +sm 
+        +flex
+        flex-wrap: wrap
+        gap: $s-24 
+    +md 
+        display: block
+    .mission
+        +flex
+        +flex-align(start)
+        +flex-dir(column)
+        gap: 0
+        width: 100%
+        +sm 
+            width: calc(50% - 24px) 
+        +md 
+            width: 100%
+        +lg
+            +flex-dir(row)
+            gap: $s-24
+            width: 100%
+        .sn
+            font-size: $font-40
+            font-family: var(--news-filler-font)
+            color: var(--news-secondary-color)
+            align-self: center
+            +sm 
+                align-self: flex-start
+            +md 
+                align-self: flex-start
+            
+        .mission-content
+            .title
+                font-size: $font-18
+                text-align: center
+                +sm 
+                    text-align: start
+            p
+                text-align: center
+                +sm 
+                    text-align: start
+            

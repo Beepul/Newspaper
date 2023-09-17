@@ -1,0 +1,24 @@
+// center item
+.item-center
+    +display-inline-flex
+    +justify-content(center)
+    +flex-align(center)
+    &-left
+        +display-inline-flex
+        +justify-content(center)
+        +flex-align(start)
+
+//box shadow
+.box
+    &-shadow
+        +box-shadow( 0px 4px 8px 0px rgba(0, 0, 0, 0.08))
+
+
+.spacing
+    padding: 48px 0
+    +md
+        padding: 58px 0
+    +lg
+        padding: 78px 0
+    +xl
+        padding: 88px 0

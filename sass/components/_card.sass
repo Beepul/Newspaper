@@ -1,0 +1,443 @@
+$number-of-list-items: 4
+.widget.widget_newspaper_author_bio_widget
+    +flex 
+    +flex-dir(column)
+    +flex-align(center)
+    gap: $s-20
+    .wp-block-heading
+        width: 100% 
+        align-self: left
+    a
+        height: 120px
+        width: 120px
+        img 
+            +radius(50%)
+            height: 100%
+            width: 100%
+            object-fit: cover
+    img
+        width: 140px
+    span
+        @extend %bold 
+        font-size: $s-18
+    figcaption
+        text-align: center
+        font-size: $s-14
+    p 
+        text-align: center
+
+.weather_wrap
+    .section__heading
+        margin-bottom: $s-32 + $s-20
+
+
+.tweet_hr 
+    +flex
+    // +flex-align(center)
+    gap: $s-16
+    .tweet_profile
+        height: 72px
+        width: 72px 
+        overflow: hidden
+        margin: 0
+        +radius(50%)
+        background-color: red
+        display: inline-block
+        img 
+            width: 72px
+            height: 72px
+            object-fit: cover
+    .tweet_content
+        width: calc( 100% - 72px - 16px )
+        +flex
+        +flex-dir(column)
+        gap: $s-8 
+        .tweet_title
+            @extend %bold
+            margin-bottom: 0
+            color: $text-primary
+        .tweet_info
+            +flex 
+            +flex-just(space-between)
+            .tweet_name
+                font-size: $s-14
+                @extend %semi-bold
+                +flex 
+                +flex-dir(column)
+                color: $text-secondary
+                .tweet_username
+                    @extend %regular
+                    font-size: $s-12 
+            .tweet_date
+                font-size: $s-12 
+                align-self: end
+
+
+.post
+    position: relative
+    .image
+        figure,.post-thumbnail
+            a
+                img 
+                    max-height: 240px
+                    object-fit: cover
+    .archive-content-wrapper
+        border: 1px solid $text-tertiary
+        padding: $s-24
+        border-top: 0
+        .entry-header
+            .category-wrap
+                margin-bottom: $s-12
+            .entry-details
+                .entry-title
+                    font-size: $font-24
+                    letter-spacing: 0px
+                    margin-bottom: $s-12
+                    a
+                        &:hover
+                            color: $text-primary
+        .entry-content
+            .bookmark
+                position: absolute
+                top: 24px 
+                right: 24px
+            p
+                color: $text-secondary
+                margin-bottom: $s-16
+            
+
+.team-card
+    position: relative
+    height: 400px
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        inset: 0
+        +transition(.3s ease)
+        transition-delay: 0.2s
+        background: linear-gradient(180deg, rgba(16, 43, 84, 0.00) 0%, rgba(16, 43, 84, 0.52) 59.14%, rgba(16, 43, 84, 0.72) 100%)
+    &:hover
+        &::before
+            top: 100%
+        .team-info
+            bottom: -24%
+        .team-social-wrap
+            .social-networks
+                li
+                    bottom: 24px !important
+            
+    &>a
+        &:hover 
+            opacity: 1
+    img
+        height: 100%
+        object-fit: cover
+        max-height: 400px
+    .team-info
+        position: absolute
+        bottom: 24px
+        left: 0
+        right: 0
+        +transition(.3s ease)
+        transition-delay: 0.2s
+        h4,.team-name
+            color: $text-tertiary
+            text-align: center
+            a 
+                color: $text-tertiary
+        span,.team-title
+            color: $text-tertiary   
+            text-align: center
+            display: block
+    .team-social-wrap
+        .social-networks
+            +flex-just(center)
+            li
+                position: absolute
+                bottom: -15%
+            @for $i from 1 through $number-of-list-items 
+                li:nth-child(#{$i}) 
+                    left: $i * 17%
+                    transition-delay: #{$i / 10}s
+
+
+.team-card-sm
+    position: relative
+    overflow: hidden
+    a
+        height: 100%
+        display: inline-block
+        width: 100%
+        img
+            object-fit: cover
+            max-height: 240px
+            height: 100%
+            min-height: 200px
+    .team-content
+        +flex 
+        +flex-just(space-between)
+        .team-info
+            .team-name
+                text-align: start
+                margin-bottom: 4px
+                a
+                    color: $text-primary
+            .team-title
+                text-align: start
+                width: 100%
+                display: inline-block
+                color: $text-secondary
+        .team-social-wrap
+            height: 38px
+            width: 38px
+            background-color: var(--news-primary-color)
+            // overflow: hidden
+            margin-top: 16px
+            position: relative
+            cursor: pointer
+            // overflow: hidden
+            +sm 
+                height: 48px
+                width: 48px
+
+            &:hover
+                background-color: $primary-100
+                .social-networks
+                    // bottom: 100%
+                    left: 0
+            &::before
+                content: ''
+                position: absolute
+                inset: 0
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M15 18.3334C14.3056 18.3334 13.7153 18.0904 13.2292 17.6042C12.7431 17.1181 12.5 16.5279 12.5 15.8334C12.5 15.7362 12.5069 15.6354 12.5208 15.5309C12.5347 15.427 12.5556 15.3334 12.5833 15.2501L6.70833 11.8334C6.47222 12.0417 6.20833 12.2048 5.91667 12.3226C5.625 12.4409 5.31944 12.5001 5 12.5001C4.30556 12.5001 3.71528 12.257 3.22917 11.7709C2.74306 11.2848 2.5 10.6945 2.5 10.0001C2.5 9.30564 2.74306 8.71536 3.22917 8.22925C3.71528 7.74314 4.30556 7.50008 5 7.50008C5.31944 7.50008 5.625 7.55897 5.91667 7.67675C6.20833 7.79508 6.47222 7.95842 6.70833 8.16675L12.5833 4.75008C12.5556 4.66675 12.5347 4.57314 12.5208 4.46925C12.5069 4.3648 12.5 4.26397 12.5 4.16675C12.5 3.4723 12.7431 2.88203 13.2292 2.39591C13.7153 1.9098 14.3056 1.66675 15 1.66675C15.6944 1.66675 16.2847 1.9098 16.7708 2.39591C17.2569 2.88203 17.5 3.4723 17.5 4.16675C17.5 4.86119 17.2569 5.45147 16.7708 5.93758C16.2847 6.42369 15.6944 6.66675 15 6.66675C14.6806 6.66675 14.375 6.60758 14.0833 6.48925C13.7917 6.37147 13.5278 6.20841 13.2917 6.00008L7.41667 9.41675C7.44444 9.50008 7.46528 9.59369 7.47917 9.69758C7.49306 9.80203 7.5 9.90286 7.5 10.0001C7.5 10.0973 7.49306 10.1979 7.47917 10.3017C7.46528 10.4062 7.44444 10.5001 7.41667 10.5834L13.2917 14.0001C13.5278 13.7917 13.7917 13.6284 14.0833 13.5101C14.375 13.3923 14.6806 13.3334 15 13.3334C15.6944 13.3334 16.2847 13.5765 16.7708 14.0626C17.2569 14.5487 17.5 15.139 17.5 15.8334C17.5 16.5279 17.2569 17.1181 16.7708 17.6042C16.2847 18.0904 15.6944 18.3334 15 18.3334Z' fill='white'/%3E%3C/svg%3E")
+                background-size: 20px 
+                background-repeat: no-repeat
+                background-position: center
+            .social-networks
+                background-color: $text-tertiary
+                +flex-dir(column)
+                position: absolute
+                bottom: 100%
+                left: 200%
+                right: 0
+                padding: $s-16 0
+                +transition(.6s ease)
+                li
+                    +flex-just(center)
+                    a
+                        background-color: transparent
+                        svg 
+                            transform: scale(1.3)
+                            path 
+                                fill: var(--news-primary-color)
+                            
+
+.details-card
+    +flex 
+    +flex-dir(column)
+    .branch
+        color: var(--news-primary-color)
+        text-transform: uppercase
+        align-self: center
+        margin-bottom: $s-12
+        @extend %semi-bold
+    .location
+        margin-top: 0
+        margin-bottom: $s-12
+        text-align: center
+    .mail
+        color: $text-secondary
+        align-self: center
+    .phone
+        align-self: center
+        color: $text-secondary
+
+
+.pricing-card
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12)
+    &:hover
+        background: var(--news-primary-color)
+        .pricing-title,span,li, a
+            color: $white !important
+        .btn__primary
+            background-color: $white
+            color: var(--news-primary-color) !important
+        .pricing-head
+            .pricing-head-right
+                .pricing-tag 
+                    background: $white !important
+                    color: var(--news-primary-color) !important
+        li::before
+            background-color: $white !important
+       
+    .pricing-card-top
+        padding: $s-32
+
+    .pricing-head
+        margin-bottom: $s-16
+        padding-bottom: $s-16
+        +flex 
+        +flex-align(center)
+        +flex-just(space-between)
+        border-bottom: 1px solid $text-tertiary
+        .pricing-head-left
+            .pricing-title
+                margin: 0
+            .pricing-desc
+                font-size: $s-14
+                color: $text-secondary
+        .pricing-head-right
+            .pricing-tag
+                font-size: $s-12 
+                background: var(--bg, rgba(16, 43, 84, 0.04))
+                color: var(--news-primary-color)
+                padding: 4px 8px
+    .pricing-body
+        .price
+            +flex 
+            +flex-align(center)
+            gap: $s-12
+            margin-bottom: $s-24
+            .price-amount
+                font-size: $font-40
+                color: $text-primary
+                @extend %bold
+            .price-tag
+                font-size: $font-14
+        .btn__primary
+            margin-bottom: $s-24
+        .plan-features
+            +flex 
+            +flex-dir(column)
+            gap: $s-16
+            .plan-heading
+                @extend %bold 
+                color: $text-secondary
+            ul
+                +flex 
+                +flex-dir(column)
+                gap: $s-16
+                li
+                    color: $text-secondary
+                    +flex 
+                    +flex-align(start)
+                    gap: 12px
+                    &::before
+                        content: ''
+                        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M5.279 11.3822C7.4945 7.55728 11.426 0.179454 13.1618 0.335758L6.02123 13.3673C5.58392 13.8325 5.24005 13.6841 4.97256 13.4039L0.332031 8.77519C0.693912 7.98692 3.27624 10.0544 5.27883 11.3821L5.279 11.3822Z' fill='%23102B54'/%3E%3C/svg%3E")
+                        mask-repeat: no-repeat
+                        background-size: 13px
+                        min-height: 16px
+                        min-width: 16px 
+                        background-color: var(--news-primary-color)
+                        display: inline-block
+                        +transition(.3s ease)
+                        transform: translateY(8px)
+    .pricing-footer
+        border-top: 1px solid $text-tertiary
+        a
+            background: var(--bg, rgba(16, 43, 84, 0.04)) 
+            padding: 10px 0
+            width: 100%
+            display: inline-block
+            text-align: center
+            color: $text-primary
+            @extend %bold
+
+
+.author-tweet-card
+    padding: $s-24 
+    border: 1px solid $text-tertiary
+    margin-bottom: $s-48
+    .author-header
+        +flex 
+        +flex-just(space-between)
+        margin-bottom: $s-24
+        .author-info
+            +flex 
+            gap: 8px
+            .profile-image
+                img
+                    height: 80px 
+                    width: 80px 
+                    +radius(50%)
+                    object-fit: cover
+            .author-desc
+                +flex 
+                +flex-dir(column)
+                .author-name
+                    color: $text-primary
+                    font-size: $font-16
+                    @extend %bold
+                .author-username
+                    font-size: $font-14
+                    color: $text-secondary
+                    span
+                        @extend %bold 
+                        color: $text-highlight-blue
+        .social-networks
+            li
+                &::before
+                    display: none
+    .author-body
+        .wp-block-image
+            img
+                max-height: 400px
+                object-fit: cover
+                min-height: 300px
+        p
+            a
+                color: $text-highlight-blue
+                font-size: $font-16
+                @extend %regular
+                margin-right: 0
+                line-height: 160% 
+                float: none
+                border-bottom: 0
+    .author-footer
+        +flex 
+        +flex-dir(column)
+        gap: $s-24
+        .date
+            padding-bottom: $s-24 
+            border-bottom: 1px solid $text-tertiary
+            font-style: italic
+            font-size: $font-14
+            color: $text-secondary
+        .article-details
+            +flex 
+            +flex-align(center)
+            gap: $s-20
+            flex-wrap: wrap
+            +sm 
+                flex-wrap: nowrap
+                gap: $s-60
+            .article-comment,.article-retweet,.article-like
+                +flex 
+                +flex-align(center)
+                gap: 8px 
+                color: $text-secondary
+                &::before
+                    content: ''
+                    height: 24px 
+                    width: 24px 
+                    // display: inline-block
+                    background-size: 24px 
+                    mask-repeat: no-repeat
+                    background-color: $text-secondary
+                    @extend %display-center
+                    mask-position: center
+
+            .article-comment::before
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M2.77815 12.0028V11.9996C2.77815 9.83833 3.73012 7.74762 5.45506 6.19305C6.30974 5.42279 7.32851 4.80818 8.45492 4.38769C9.58137 3.96719 10.791 3.75 12.0141 3.75C14.4873 3.75 16.8456 4.63616 18.5731 6.19305C20.298 7.74762 21.25 9.83833 21.25 11.9996C21.25 14.1609 20.298 16.2516 18.5731 17.8062C16.8456 19.363 14.4873 20.2492 12.0141 20.2492H3.02674H3.01251L2.9983 20.2497C2.93279 20.2522 2.87237 20.2366 2.82593 20.2111L2.46438 20.8682L2.82593 20.2111C2.78855 20.1905 2.76582 20.1669 2.75297 20.1477C2.74922 20.1352 2.74939 20.1246 2.75146 20.1149L2.01803 19.9581L2.75146 20.1149C2.75434 20.1014 2.76387 20.0776 2.79242 20.0511C2.7928 20.0508 2.79319 20.0504 2.79358 20.05L4.78707 18.2535L5.34845 17.7475L4.83826 17.19C3.49198 15.7188 2.77024 13.8831 2.77815 12.0028ZM12.0141 19.9493H12.0146C14.0164 19.9479 15.9647 19.3215 17.5269 18.1642C19.0904 17.0061 20.176 15.3825 20.5767 13.5601C20.9777 11.736 20.6627 9.84644 19.6954 8.21819C18.7295 6.59237 17.1786 5.33514 15.3219 4.64332C13.4656 3.95168 11.4046 3.86211 9.48567 4.38795C7.56638 4.91386 5.89236 6.0276 4.75992 7.55705C3.62586 9.08868 3.10884 10.9393 3.31247 12.7914C3.51593 14.6421 4.4235 16.3568 5.85891 17.6496C5.89742 17.6848 5.90242 17.7148 5.90242 17.7278C5.90242 17.7409 5.89741 17.771 5.85879 17.8062C5.85863 17.8064 5.85846 17.8065 5.85829 17.8067L4.93125 18.6422L3.48086 19.9493H5.43335H12.0141Z' fill='%234B4B4B' stroke='%234B4B4B' stroke-width='1.5'/%3E%3C/svg%3E")
+            .article-retweet::before
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14' fill='none'%3E%3Cpath d='M23.082 9.15069L23.0905 9.14428C23.3541 8.94675 23.7226 8.97306 23.9554 9.20585L23.082 9.15069ZM23.082 9.15069L23.0744 9.15824M23.082 9.15069L23.0744 9.15824M23.0744 9.15824L20.9253 11.3073V4.32621C20.9253 3.40421 20.5592 2.52012 19.9073 1.86805L19.9073 1.86804C19.2554 1.21614 18.3711 0.85 17.4493 0.85H10.2851C9.91953 0.85 9.62344 1.14635 9.62344 1.51168C9.62344 1.87723 9.91958 2.17336 10.2851 2.17336H17.4493C18.0202 2.17336 18.5677 2.40026 18.9715 2.80392C19.3752 3.20769 19.602 3.75526 19.602 4.32626V11.2818M23.0744 9.15824L19.602 11.2818M19.602 11.2818L17.4786 9.15825L17.4711 9.15069L17.4625 9.14429C17.199 8.94674 16.8305 8.97306 16.5976 9.20585L19.602 11.2818ZM16.5424 10.0791L16.5362 10.0708C16.3384 9.80742 16.3647 9.43858 16.5976 9.20589L16.5424 10.0791ZM16.5424 10.0791L16.5496 10.0864M16.5424 10.0791L16.5496 10.0864M16.5496 10.0864L19.799 13.3614L19.8096 13.3721M16.5496 10.0864L19.8096 13.3721M19.8096 13.3721L19.8222 13.3805M19.8096 13.3721L19.8222 13.3805M19.8222 13.3805L19.8989 13.4318L19.9367 13.457M19.8222 13.3805L19.9367 13.457M19.9367 13.457H19.9822M19.9367 13.457H19.9822M19.9822 13.457H20.5451H20.5906M19.9822 13.457H20.5906M20.5906 13.457L20.6284 13.4318M20.5906 13.457L20.6284 13.4318M20.6284 13.4318L20.7051 13.3805L20.7174 13.3723M20.6284 13.4318L20.7174 13.3723M20.7174 13.3723L20.7279 13.3618M20.7174 13.3723L20.7279 13.3618M20.7279 13.3618L24.0029 10.0868L24.0104 10.0793M20.7279 13.3618L24.0104 10.0793M24.0104 10.0793L24.0168 10.0708M24.0104 10.0793L24.0168 10.0708M24.0168 10.0708C24.2146 9.80742 24.1883 9.4386 23.9555 9.2059L24.0168 10.0708Z' fill='%234B4B4B' stroke='%234B4B4B' stroke-width='0.3'/%3E%3Cpath d='M0.864158 5.16483L0.908828 5.23946C0.645292 5.43699 0.276744 5.41069 0.0439 5.17789L0.864158 5.16483ZM0.864158 5.16483L0.924861 5.22553L3.07395 3.07645V10.0576C3.07395 10.9796 3.4401 11.8637 4.09197 12.5157L4.09199 12.5157C4.74388 13.1676 5.62821 13.5338 6.55002 13.5338H13.97C14.3354 13.5338 14.6317 13.2375 14.6317 12.8721C14.6317 12.5065 14.3354 12.2104 13.97 12.2104H6.55002C5.97911 12.2104 5.43164 11.9835 5.02784 11.5799C5.02784 11.5799 5.02783 11.5799 5.02782 11.5799M0.864158 5.16483L5.02782 11.5799M5.02782 11.5799C4.62406 11.1761 4.39731 10.6285 4.39731 10.0575V3.10201L6.52067 5.22553L6.52822 5.23309L6.53677 5.23949C6.80031 5.43704 7.16883 5.41072 7.40169 5.17793L5.02782 11.5799ZM7.4569 4.30473L7.46309 4.31297C7.66092 4.57636 7.63461 4.9452 7.40174 5.17789L7.4569 4.30473ZM7.4569 4.30473L7.44964 4.29741M7.4569 4.30473L7.44964 4.29741M7.44964 4.29741L4.20032 1.02237L4.20032 1.02237M7.44964 4.29741L4.20032 1.02237M4.20032 1.02237L4.1999 1.02195M4.20032 1.02237L4.1999 1.02195M4.1999 1.02195L4.12316 0.945204L4.07923 0.90127M4.1999 1.02195L4.07923 0.90127M4.07923 0.90127H4.01709M4.07923 0.90127H4.01709M4.01709 0.90127H3.4542H3.39206M4.01709 0.90127H3.39206M3.39206 0.90127L3.34813 0.945204M3.39206 0.90127L3.34813 0.945204M3.34813 0.945204L-0.00362203 4.29696L-0.0111221 4.30446M3.34813 0.945204L-0.0111221 4.30446M-0.0111221 4.30446L-0.0174921 4.31294M-0.0111221 4.30446L-0.0174921 4.31294M-0.0174921 4.31294C-0.215332 4.57633 -0.189005 4.94514 0.0438541 5.17785L-0.0174921 4.31294Z' fill='%234B4B4B' stroke='%234B4B4B' stroke-width='0.3'/%3E%3C/svg%3E")
+            .article-like::before
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='19' viewBox='0 0 22 19' fill='none'%3E%3Cpath d='M4.19439 2.39067L4.19415 2.39078C3.28443 2.81879 2.56998 3.62931 2.19045 4.68587L4.19439 2.39067ZM4.19439 2.39067C4.87857 2.06791 5.62001 1.91461 6.34797 1.91461C7.92316 1.91461 9.39881 2.6293 10.1009 3.83915L10.1014 3.84007L10.4975 4.51597C10.4975 4.51599 10.4975 4.51601 10.4975 4.51602C10.5977 4.68713 10.7791 4.79372 10.9765 4.79904L10.9774 4.79906C11.1806 4.80381 11.3621 4.7051 11.47 4.54094L11.4703 4.5411L11.4764 4.53069L11.8997 3.81379L11.9006 3.81231C12.9322 2.0375 15.6343 1.33984 17.8075 2.36727L17.8079 2.36744C18.7174 2.7957 19.4319 3.60709 19.8111 4.66502C20.2633 5.92724 20.1924 7.4035 19.6222 8.60701L19.6221 8.60716M4.19439 2.39067L19.6221 8.60716M19.6221 8.60716C19.2985 9.29143 18.6646 10.0986 17.8598 10.9458C17.0587 11.7891 16.1031 12.6567 15.1524 13.4616C13.3944 14.9499 11.6645 16.2144 10.9841 16.7017C10.2739 16.1925 8.54161 14.9237 6.79249 13.4395C5.85081 12.6405 4.90751 11.7818 4.11728 10.9478C3.32345 10.1101 2.69893 9.31249 2.3786 8.63558L19.6221 8.60716ZM10.9919 3.10153C9.58566 0.905755 6.29882 0.131352 3.70619 1.35477C2.50896 1.91802 1.59069 2.9675 1.11255 4.29908C0.5577 5.84429 0.643653 7.64582 1.3433 9.12548L1.34334 9.12556C1.7508 9.98648 2.52662 10.9491 3.44616 11.903C4.36954 12.8608 5.45383 13.8259 6.49548 14.6916C8.57779 16.4223 10.5033 17.767 10.6642 17.8788C10.7636 17.9482 10.8783 17.9815 10.9911 17.9815C11.1389 17.9815 11.2858 17.9246 11.3962 17.814C11.7771 17.5469 13.6691 16.2059 15.6667 14.5318C16.6849 13.6784 17.7339 12.7357 18.6253 11.8023C19.5131 10.8727 20.2597 9.93701 20.6568 9.09745C21.356 7.6216 21.4422 5.82257 20.8884 4.2783C20.4109 2.94569 19.4928 1.89524 18.2958 1.33132C15.6951 0.102061 12.3897 0.886076 10.9919 3.10153ZM2.37858 8.63554C1.80756 7.42829 1.73697 5.94905 2.19043 4.68591L2.37858 8.63554Z' fill='%234B4B4B' stroke='%234B4B4B' stroke-width='0.5'/%3E%3C/svg%3E")
+            .article-share
+                @extend %display-center
+        .show
+            font-size: $font-18
+            color: $text-highlight-blue
+            

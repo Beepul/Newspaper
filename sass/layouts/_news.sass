@@ -1,0 +1,165 @@
+.news__card__vr
+    padding: $s-20 0
+    +flex 
+    +flex-align(center)
+    +flex-just(space-between)
+    gap: $s-24
+    .news__card__left
+           
+        ul,.rdv__list 
+            li
+                color: $text-secondary
+    .news__card__right
+        figure 
+            height: 86px 
+            width: 86px 
+            margin: 0
+            img 
+                width: 100%
+                height: 100%
+                object-fit: contain
+.news__card__vr:not(:last-child)
+    @extend %border-btm
+
+
+.news__card__img
+    position: relative
+    img 
+        height: 100% 
+        width: 100%
+        object-fit: cover
+    .news__img__content
+        position: absolute
+        inset: 0
+        z-index: 2
+        padding: $s-18
+        +flex
+        +flex-dir(column)
+        +flex-just(space-between)
+        +lg 
+            padding: $s-32
+        .top
+            +flex 
+            +flex-align(center)
+            gap: $s-12
+            
+            .image__icon
+                background-color: var(--news-secondary-color)
+                height: 26px 
+                width: 26px 
+                +radius(50%)
+                @extend %display-center
+            .video__icon
+                background-color: var(--news-secondary-color)
+                height: 26px 
+                width: 26px 
+                +radius(50%)
+                @extend %display-center
+            .cat
+                padding: 2px $s-8 
+                background-color: var(--news-secondary-color)
+                color: $white
+                @extend %bold 
+                font-size: $font-12
+                letter-spacing: 1px
+            .bookmark
+                flex: 1
+                +flex 
+                +flex-just(end)
+                +flex-align(center)
+                button 
+                    padding: 0
+                    border: 0
+                    &:hover
+                        path
+                            fill: var(--news-secondary-color)
+                    &:focus
+                        path
+                            fill: $text-tertiary
+
+        .bottom
+            +flex 
+            +flex-dir(column)
+            gap: $s-12
+            +lg 
+                gap: $s-32
+            .title
+                margin-bottom: 0 !important
+            .title,h2 
+                color: $white
+                font-size: $font-18
+                +md 
+                    font-size: $font-34
+                +lg
+                    font-size: $font-40
+                overflow: hidden
+                text-overflow: ellipsis
+                display: -webkit-box
+                -webkit-line-clamp: 2
+                -webkit-box-orient: vertical
+            h4.title
+                font-size: $font-32
+            h5.title 
+                font-size: $font-18
+            .rdv__bookmark
+                +flex 
+                +flex-just(space-between)
+                +flex-align(center)
+                .bookmark
+                    @extend %display-center
+                    padding: 0
+                    border: 0
+                    &:hover
+                        path
+                            fill: var(--news-secondary-color)
+                    &:focus
+                        path
+                            fill: $text-tertiary
+            
+.news__card__img.overlay
+    &::after 
+        content: ''
+        position: absolute
+        inset: 0
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 62.50%, rgba(0, 0, 0, 0.84) 100%)
+
+
+.small_news_card
+    figure 
+        margin: 0
+        margin-bottom: $s-8
+    .news_content
+        +flex 
+        +flex-dir(column)
+        gap: $s-8 
+        .news_tags
+            +flex 
+            column-gap: $s-12 
+            flex-wrap: wrap
+            a 
+                color: $text-secondary
+            li:not(:last-child)
+                a 
+                    border-right: 1px solid $text-secondary
+                    padding-right: $s-12
+        .news_heading
+            @extend %semi-bold
+            color: $text-primary
+            margin-bottom: 0
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+        .rdv__list
+            a,span 
+                color: $text-secondary
+            .user
+                a 
+                    &::before
+                        background-color: $text-secondary
+
+.single_news_wrap
+    .news__card__img
+        img 
+            min-height: 260px

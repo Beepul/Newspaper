@@ -1,0 +1,78 @@
+.choose-us-section
+    background-color: var(--bg, rgba(16, 43, 84, 0.04))
+    padding: $s-60 0
+    .post-thumbnail-section
+        margin: 0 0
+        +flex 
+        +flex-dir(column)
+        +flex-just(center)
+        height: 100%
+        .header-wrap
+            width: 100%
+            .title_wrap
+                text-align: center 
+                transform: translateX(0)
+                +md 
+                    transform: translateX(62px)
+                    text-align: start
+                .title
+                    &::after
+                        display: block 
+                        +md 
+                            display: none 
+            .heading
+                text-align: center 
+                +md
+                    text-align: start
+                
+            p
+                text-align: center 
+                +md
+                    text-align: start
+                
+
+.choose-us-section-grid
+    padding: $s-32 0
+    +md 
+        padding: $s-60 0
+    .post-thumbnail-section
+        margin: 0 0
+        +flex 
+        +flex-dir(column)
+        +flex-just(center)
+        height: 100%
+        .header-wrap
+            width: 100%
+            .title_wrap
+                text-align: center 
+                +lg 
+                    text-align: end
+
+                .title 
+                    &::after
+                        display: block 
+                        +lg 
+                            display: none 
+            .heading
+                text-align: center
+                +lg 
+                    text-align: end
+                br 
+                    display: block 
+                    
+            p
+                text-align: center 
+                +lg 
+                    text-align: end
+    .mission-vision-section
+        display: grid
+        grid-template-columns: repeat(1,1fr) 
+        grid-gap: 0
+        +sm 
+            grid-gap: $s-48
+            grid-template-columns: repeat(2,1fr) 
+
+        .mission
+            gap: 0
+            +flex-dir(column)
+            width: 100%

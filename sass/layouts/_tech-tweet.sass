@@ -1,0 +1,65 @@
+.tech_tweet
+    margin-bottom: $s-60 
+    .latest_tech
+        margin-bottom: calc($s-48 - $s-24)
+        .section__heading
+            margin-bottom: $s-48
+        h2
+            margin: $s-24 0
+        .bottom
+            .rdv__bookmark
+                +flex 
+                +flex-align(center)
+                +flex-just(space-between)
+                li,a
+                    color: $text-secondary
+                .user a::before
+                    background-color: $text-secondary
+                .bookmark
+                    button
+                        border: 0
+                        padding: 0
+                        &:hover
+                            path
+                                fill: var(--news-secondary-color)
+                        &:focus 
+                            path
+                                fill: $text-secondary
+                    path
+                        fill: $text-secondary
+    .small_news_wrap
+        .small_news_card
+            .news_content
+                gap: $s-12
+                h4
+                    margin-top: 0
+                p
+                    margin-bottom: 0
+                    -webkit-box-orient: vertical
+                    -webkit-line-clamp: 2
+                    display: -webkit-box
+                    overflow: hidden
+    .latest_tweet
+        margin-bottom: $s-28
+        .section__heading
+            margin-bottom: $s-48
+            margin-top: 0
+            +lg 
+                margin-top: $s-20
+        .tweet_wrapper
+            +flex
+            +flex-dir(column)
+            gap: $s-20
+            .tweet_hr
+                padding-bottom: $s-20
+                &:not(:last-child)
+                    border-bottom: 1px solid $text-tertiary
+                .tweet_title
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    display: -webkit-box
+                    -webkit-line-clamp: 2
+                    -webkit-box-orient: vertical
+    .widget,.widget_block
+        margin-bottom: $s-38
+                    

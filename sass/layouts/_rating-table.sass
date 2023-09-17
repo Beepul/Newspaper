@@ -1,0 +1,18 @@
+.review-section
+    padding: $s-24
+    border: 2px solid $text-tertiary
+    margin-bottom: $s-48
+    .review-wrapper
+        +flex 
+        +flex-dir(column)
+        gap: $s-16
+        margin-top: $s-16
+        .review
+            +flex 
+            +flex-align(center)
+            +flex-just(space-between)
+            p
+                margin-bottom: 0
+        .review:not(:last-child)
+            padding-bottom: $s-16
+            border-bottom: 1px solid $text-tertiary

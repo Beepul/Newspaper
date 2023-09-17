@@ -1,0 +1,64 @@
+.grid-quote-wrap
+    background-color: var(--bg, rgba(16, 43, 84, 0.04))
+    padding: 0
+    padding-bottom: $s-24
+    +md 
+        padding: 60px - 24px
+
+    blockquote
+        border: 0
+        +radius(0)
+        background-color: transparent
+        margin: 0
+        padding: $s-22
+        p
+            @extend %bold
+            font-style: italic
+            color: $text-primary
+            font-size: $font-18
+            padding-top: 20px  
+            +md 
+                font-size: $font-32
+            +lg 
+                padding: 0
+                font-size: $font-22
+            +xxl
+                font-size: $font-32
+        cite
+            @extend %regular
+        &::before,&::after
+            content: ''
+            height: 32px 
+            width: 32px 
+            display: inline-block
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='19' viewBox='0 0 28 19' fill='none'%3E%3Cpath d='M21.8992 6.85206C22.5427 5.74052 23.6542 4.51241 25.5846 3.34206C26.111 3.04949 26.4619 2.46478 26.4619 1.87965C26.4619 0.651013 25.2332 -0.167938 24.1222 0.300138C20.9048 1.76255 15.4648 5.33083 15.4648 12.7599C15.4648 16.0356 18.1559 18.7266 21.4316 18.7266C24.7661 18.7266 27.3983 16.0356 27.3983 12.7599C27.3396 9.65957 24.9412 7.14443 21.8991 6.85185L21.8992 6.85206Z' fill='%23102B54'/%3E%3Cpath d='M7.10037 6.85206C7.74386 5.74052 8.85537 4.51241 10.7858 3.34206C11.3121 3.04949 11.663 2.46478 11.663 1.87965C11.663 0.651013 10.4344 -0.167938 9.32339 0.300138C6.10598 1.76255 0.666016 5.33083 0.666016 12.7599C0.666016 16.0356 3.35706 18.7266 6.63276 18.7266C9.96726 18.7266 12.5995 16.0356 12.5995 12.7599C12.5991 9.65957 10.2006 7.14443 7.10031 6.85185L7.10037 6.85206Z' fill='%23102B54'/%3E%3C/svg%3E")
+            background-repeat: no-repeat
+            background-size: 26px
+            background-position: center
+            position: absolute
+        &::before
+            top: 0
+            left: -10px 
+            +md 
+                left: 0
+            +lg 
+                left: -20px
+
+        &::after
+            bottom: 0
+            right: 0px
+            opacity: 1
+            top: unset
+            transform: rotate(180deg)
+            +lg 
+                bottom: 10%
+                right: 10%
+            +xl  
+                bottom: 0
+                right: 0
+    img
+        min-height: 200px
+        object-fit: cover
+        max-height: 320px
+        +lg 
+            max-height: 280px

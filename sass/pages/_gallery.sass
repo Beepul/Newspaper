@@ -1,0 +1,69 @@
+.gallery-archive
+    +flex 
+    +flex-dir(column)
+    gap: $s-48
+    .content-wrap
+        .news__card__img
+            .news__img__content
+                .image_icon_view
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                    height: 68px 
+                    width: 68px 
+                    +radius(50%)
+                    background-color: var(--news-secondary-color)
+                    @extend %display-center
+                    opacity: 0.7
+                .play__btn
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                    opacity: 0.7
+
+            &>img 
+                max-height: 600px
+                min-height: 400px
+            .top
+                .bookmark
+                    +flex 
+                    +sm 
+                        display: none
+            .bottom
+                gap: $s-24 
+                .title
+                    margin-bottom: 0
+                .bookmark
+                    display: none 
+                    +sm 
+                        +flex
+            .entry-meta
+                a,span
+                    color: $text-tertiary
+    .content-wrap-main
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 48px
+        +md 
+            grid-template-columns: repeat(2, 1fr)
+        +lg
+            grid-template-columns: repeat(3, 1fr)
+        .post
+            .image__icon,.video__icon
+                position: absolute
+                top: 24px
+                left: 24px
+                height: 24px 
+                width: 24px 
+                +radius(50%)
+                background-color: var(--news-secondary-color)
+                @extend %display-center
+            .entry-title,.category-wrap
+                margin-bottom: $s-16
+    .navigation.pagination
+        .nav-links
+            +flex-just(center !important)
+
+    

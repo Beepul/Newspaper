@@ -1,0 +1,229 @@
+.rdv__list
+    +flex 
+    +flex-align(center)
+    flex-wrap: wrap
+    gap: $s-12
+    // background: $primary-100
+    li 
+        +flex 
+        +flex-align(center)
+        gap: $s-12
+        font-size: $font-14
+        color: $white
+        a
+            font-size: $font-14
+            color: $white
+    .user
+        a
+            +flex 
+            +flex-align(center)
+            gap: $s-8
+            &::before
+                content: ''
+                display: inline-block
+                height: 22px 
+                width: 22px 
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 5C9.38193 5 8.77775 5.18328 8.26384 5.52666C7.74994 5.87004 7.3494 6.3581 7.11288 6.92911C6.87635 7.50013 6.81447 8.12847 6.93505 8.73466C7.05563 9.34085 7.35325 9.89767 7.79029 10.3347C8.22733 10.7717 8.78415 11.0694 9.39034 11.19C9.99654 11.3105 10.6249 11.2486 11.1959 11.0121C11.7669 10.7756 12.255 10.3751 12.5983 9.86116C12.9417 9.34725 13.125 8.74307 13.125 8.125C13.125 7.2962 12.7958 6.50134 12.2097 5.91529C11.6237 5.32924 10.8288 5 10 5Z' fill='white'/%3E%3Cpath d='M10 1.25C8.26942 1.25 6.57769 1.76318 5.13876 2.72464C3.69983 3.6861 2.57832 5.05267 1.91606 6.65152C1.25379 8.25037 1.08051 10.0097 1.41813 11.707C1.75575 13.4044 2.58911 14.9635 3.81282 16.1872C5.03653 17.4109 6.59563 18.2442 8.29296 18.5819C9.9903 18.9195 11.7496 18.7462 13.3485 18.0839C14.9473 17.4217 16.3139 16.3002 17.2754 14.8612C18.2368 13.4223 18.75 11.7306 18.75 10C18.7474 7.68017 17.8246 5.45611 16.1843 3.81574C14.5439 2.17537 12.3198 1.25265 10 1.25ZM14.995 15.5788C14.9825 14.759 14.6485 13.9769 14.0649 13.401C13.4814 12.8251 12.6949 12.5015 11.875 12.5H8.125C7.30512 12.5015 6.51865 12.8251 5.93506 13.401C5.35147 13.9769 5.01746 14.759 5.005 15.5788C3.87161 14.5667 3.07234 13.2343 2.71303 11.7579C2.35372 10.2815 2.45132 8.73084 2.9929 7.31116C3.53449 5.89148 4.49452 4.66979 5.74586 3.80785C6.99721 2.94592 8.48084 2.48439 10.0003 2.48439C11.5198 2.48439 13.0034 2.94592 14.2548 3.80785C15.5061 4.66979 16.4661 5.89148 17.0077 7.31116C17.5493 8.73084 17.6469 10.2815 17.2876 11.7579C16.9283 13.2343 16.1284 14.5667 14.995 15.5788Z' fill='white'/%3E%3C/svg%3E")
+                mask-repeat: no-repeat
+                background-color: $text-tertiary
+
+    li:not(:last-child)
+        &::after
+            content: ''
+            display: inline-block
+            height: 6px 
+            width: 6px 
+            background-image: url('../assets/icons/red-circle.svg')
+            background-repeat: no-repeat
+            background-position: center
+            background-size: 4px
+    .watching 
+        &::before
+            content: ''
+            display: inline-block
+            height: 6px 
+            width: 6px 
+            background-image: url('../assets/icons/red-circle.svg')
+            background-repeat: no-repeat
+            background-position: center
+            background-size: 4px
+
+.list__vr__news
+    li 
+        a
+            +flex 
+            +flex-align(center)
+            gap: $s-16
+            font-size: $font-16
+            @extend %semi-bold
+            color: $text-primary
+            span, .sn 
+                font-size: $font-40
+                @extend %bold 
+                color: $text-primary
+            span.heading, p 
+                font-size: $font-16
+                @extend %semi-bold
+                margin: 0
+    li:not(:first-child)
+        padding-top: $s-20
+    li:not(:last-child)
+        padding-bottom: $s-20
+        @extend %border-btm
+
+
+.wp-block-categories-list.wp-block-categories
+    .cat-item
+        +flex 
+        +flex-align(center)
+        gap: $s-12
+        &::before
+            content: ''
+            display: inline-block
+            height: 12px 
+            width: 12px 
+            // background-image: url('../assets/icons/right-arrow.svg')
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M4.16667 11L3 9.83333L6.83333 6L3 2.16667L4.16667 1L9.16667 6L4.16667 11Z' fill='%23212529'/%3E%3C/svg%3E")
+            mask-repeat: no-repea
+            // background-size: 12px
+            background-color: $text-secondary
+        a 
+            padding: $s-20 0
+            +flex 
+            +flex-just(space-between)
+            +flex-align(center)
+            flex: 1
+            color: $text-primary
+    .cat-item:not(:last-child)
+        @extend %border-btm
+            
+.category-wrap
+    .category-list
+        +flex 
+        flex-wrap: wrap
+        column-gap: $s-12
+        row-gap: $s-6
+        a
+            padding-right: $s-12 
+            color: $text-secondary
+            line-height: 16px
+            font-size: $font-16
+            &:not(:last-child)
+                border-right: 1px solid $text-secondary
+
+.entry-meta
+    +flex 
+    +flex-just(space-between)
+    +flex-align(center)
+    flex-wrap: wrap
+    gap: $s-24
+    margin-bottom: 0
+    .auth
+        +flex 
+        +flex-align(center)
+        column-gap: $s-12
+        row-gap: $s-6
+        flex-wrap: wrap
+        .author-details
+            +flex 
+            +flex-align(center)
+            gap: $s-8
+            img
+                height: 20px 
+                width: 20px 
+                +radius(50%)
+                overflow: hidden
+                object-fit: contain
+            span 
+                font-size: $s-14
+                a 
+                    color: $text-secondary
+        .blog__date,.time,.article-views,.quantity,.status
+            font-size: $font-14 
+            +flex 
+            +flex-align(center)
+            gap: $s-12
+            color: $text-secondary
+            &::before
+                content: ''
+                display: inline-block
+                height: 6px 
+                width: 6px 
+                background-image: url('../assets/icons/red-circle.svg')
+                background-repeat: no-repeat
+                background-position: center
+                background-size: 4px
+            a
+                color: $text-secondary
+    .article_details
+        +flex 
+        +flex-align(center)
+        gap: $s-12
+        .article-views
+            +flex 
+            +flex-align(center)
+            gap: $s-8
+            font-size: $font-14
+            color: $text-secondary
+            &::before
+                content: ''
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='18' viewBox='0 0 14 18' fill='none'%3E%3Cpath d='M6.27693 2.38835C6.33924 3.4358 6.89016 4.39315 7.76451 4.97338C8.0984 5.2167 8.46658 5.40899 8.85708 5.54408C10.1403 6.04794 11.1933 7.00634 11.8154 8.23666C12.4374 9.46711 12.585 10.8833 12.23 12.2154C11.8749 13.5476 11.0421 14.7026 9.89024 15.46C8.73839 16.2176 7.34809 16.5249 5.98408 16.3232C4.65051 16.0841 3.4453 15.3791 2.58327 14.3338C1.72123 13.2887 1.25842 11.9713 1.27737 10.6167C1.27737 10.2167 1.27737 9.83136 1.31644 9.4705H1.31632C1.71985 10.0807 2.25067 10.5965 2.87226 10.9825C3.05792 11.0985 3.27276 11.1593 3.49165 11.1581C3.87715 11.1653 4.24173 10.9831 4.46714 10.6704C4.68616 10.3553 4.74057 9.95434 4.6135 9.59245C4.09616 8.29039 3.98224 6.8629 4.28673 5.49522C4.62026 4.28198 5.31417 3.19861 6.27677 2.38845M7.16437 0.666706C7.09717 0.666008 7.03114 0.684609 6.97417 0.720416C5.73536 1.48117 3.97454 2.92983 3.37456 5.26138C3.0165 6.8064 3.13554 8.42381 3.71601 9.89996C3.74089 9.9732 3.72938 10.054 3.68508 10.1175C3.64079 10.1809 3.56906 10.2198 3.49163 10.2219C3.44827 10.2201 3.40607 10.2066 3.36968 10.1828C2.25864 9.52166 1.55749 8.3433 1.50657 7.05163C1.50401 6.95584 1.46344 6.86504 1.39392 6.79924C1.3244 6.73333 1.23163 6.69787 1.13583 6.70043C0.977378 6.69694 0.836822 6.80134 0.794382 6.95409C0.466086 8.14502 0.311566 9.37707 0.336 10.612C0.311586 12.1926 0.852506 13.7298 1.86126 14.9471C2.87002 16.1641 4.28016 16.9809 5.83766 17.2504C6.18271 17.3068 6.53181 17.3345 6.88138 17.3333C8.51605 17.3282 10.0902 16.7144 11.2968 15.6115C12.5032 14.5087 13.2558 12.9959 13.4074 11.3681C13.5434 9.93564 13.2007 8.49838 12.4328 7.28132C11.665 6.06424 10.5154 5.13608 9.16383 4.64198C8.8633 4.54049 8.57908 4.39599 8.32004 4.21277C7.82154 3.90899 7.45732 3.42689 7.30152 2.86423C7.14574 2.30168 7.20991 1.70086 7.48102 1.18388C7.53415 1.07344 7.5274 0.94358 7.46335 0.839065C7.39929 0.734553 7.28652 0.669682 7.16398 0.66689L7.16437 0.666706Z' fill='%23212529'/%3E%3Cpath d='M6.76448 8.22658C6.92061 8.28994 7.08149 8.35341 7.25218 8.41189H7.25229C7.76371 8.61592 8.19397 8.98223 8.47682 9.45457C8.75966 9.92691 8.87951 10.4791 8.81791 11.0262C8.7585 11.6598 8.46542 12.2485 7.99564 12.6777C7.52586 13.107 6.91307 13.3458 6.27681 13.348C6.13951 13.3485 6.00233 13.337 5.867 13.3138C5.7683 13.2983 5.67064 13.2772 5.57438 13.2504C6.16276 12.7588 6.60894 12.1189 6.86691 11.397C7.20161 10.4502 7.20161 9.41727 6.86691 8.47051C6.83111 8.37622 6.80193 8.28357 6.77914 8.19254M5.91583 6.72936V6.72925C5.83817 6.72913 5.76388 6.76099 5.71041 6.81725C5.65693 6.87352 5.62891 6.9492 5.63298 7.02674C5.65751 7.62801 5.77435 8.22184 5.97919 8.78754C6.23995 9.52436 6.23995 10.3284 5.97919 11.0653C5.6673 11.9299 5.01011 12.626 4.1648 12.987C4.06924 13.0234 4.00077 13.1084 3.98554 13.2095C3.97043 13.3105 4.011 13.412 4.09168 13.4748C4.55006 13.8684 5.106 14.1313 5.70122 14.2357C5.8863 14.2686 6.07404 14.285 6.26216 14.2844C7.13408 14.2822 7.97391 13.9552 8.6177 13.3671C9.26165 12.7792 9.66342 11.9724 9.74467 11.1044C9.8214 10.3495 9.64829 9.59039 9.25177 8.94365C8.85523 8.29682 8.25732 7.7982 7.54978 7.5243C7.01828 7.3519 6.51162 7.11077 6.04264 6.80724C5.99835 6.77178 5.94325 6.75283 5.88651 6.75364L5.91583 6.72936Z' fill='%23212529'/%3E%3C/svg%3E")
+                mask-repeat: no-repeat
+                background-size: 16px 
+                height: 20px 
+                width: 20px 
+                display: inline-block
+                background-color: $text-secondary
+        .article-comment
+            +flex 
+            +flex-align(center)
+            gap: $s-8
+            font-size: $font-14
+            color: $text-secondary
+            &::before
+                content: ""
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M2.43995 10.0028H2.43996V9.99967C2.43996 8.2362 3.21658 6.52701 4.6294 5.25373C5.32954 4.62275 6.16483 4.11863 7.08932 3.77352C7.91122 3.4667 8.78737 3.29166 9.67753 3.25658C9.06904 3.28119 8.46235 3.37417 7.87152 3.53607C6.24695 3.98123 4.82744 4.92462 3.86597 6.22316C2.90289 7.52387 2.46272 9.09727 2.63598 10.6732C2.80762 12.2345 3.56808 13.6798 4.768 14.7731L4.02553 15.4423L2.57521 16.7493H2.52212H2.5079L2.49368 16.7499C2.48523 16.7502 2.4771 16.7499 2.46937 16.7491L4.07274 15.3041L4.63413 14.7982L4.12394 14.2406C3.02218 13.0367 2.43351 11.5368 2.43995 10.0028ZM12.8117 3.7523C11.9393 3.42725 11.0137 3.2593 10.085 3.25032C12.09 3.26763 13.9954 3.99351 15.3937 5.25373C16.8065 6.52701 17.5832 8.2362 17.5832 9.99967C17.5832 11.7631 16.8065 13.4723 15.3937 14.7456C13.9964 16.0049 12.0928 16.7306 10.0895 16.749C11.7561 16.7319 13.3759 16.2033 14.68 15.2373C16.0055 14.2554 16.9283 12.877 17.2691 11.3269C17.6103 9.77517 17.3421 8.16816 16.5201 6.78465C15.6996 5.40356 14.3838 4.33806 12.8117 3.7523Z' fill='%23212529' stroke='%23212529' stroke-width='1.5'/%3E%3C/svg%3E")
+                mask-repeat: no-repeat
+                background-size: 20px 
+                height: 22px 
+                width: 22px 
+                display: inline-block
+                background-color: $text-secondary
+
+.list-wrap
+    +flex
+    +flex-align(start)
+    border-top: 6px solid var(--news-primary-color, #102B54)
+    border-bottom: 1px dashed var(--news-primary-color)
+    padding: $s-32 0
+    margin-bottom: $s-48
+    +flex-dir(column)
+    +lg 
+        +flex-dir(row)
+    .wp-block-heading
+        padding: 0
+        color: var(--news-primary-color)
+    ul 
+        li
+            color: var(--news-primary-color)
+            &::before
+                width: 68px !important
+                +sm
+                    width: 32px !important
+
+.bold-list
+    +flex
+    +flex-dir(column)
+    column-gap: $s-8 
+    +md 
+        +flex-dir(row)
+    &>h5 
+        width: 100%
+        +md 
+            width: 28%
+    .list
+        h5
+            display: inline-block
+            border-bottom: 1.5px solid #4169E1
+            a
+                color: $text-primary

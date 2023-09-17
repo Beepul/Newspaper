@@ -1,0 +1,34 @@
+.categories-wrapper
+    .content-wrap
+        margin-bottom: $s-48
+        +flex 
+        +flex-dir(column)
+        gap: $s-48
+        .wp-block-heading
+            padding-top: 0
+            border-bottom: 1px solid $text-tertiary
+            &::after
+                display: block
+        .news__card__img
+            img
+                max-height: 400px
+            .news__img__content
+                .top
+                    .bookmark
+                        +flex 
+                        +sm 
+                            display: none
+                .bottom
+                    gap: $s-24 
+                    .title
+                        margin-bottom: 0
+                    .bookmark
+                        display: none 
+                        +sm 
+                            +flex
+
+            .entry-meta
+                margin-bottom: 0
+                .auth
+                    a,span
+                        color: $text-tertiary

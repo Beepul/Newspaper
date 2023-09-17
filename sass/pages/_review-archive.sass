@@ -1,0 +1,32 @@
+.review-archive-wrapper
+    .content-wrap
+        margin-top: $s-60
+        .news__card__img
+            &>img
+                max-height: 500px
+                min-height: 400px
+            .news__img__content
+                .top
+                    .bookmark
+                        +flex 
+                        +flex-just(end)
+                        +flex-align(center)
+                        +sm 
+                            display: none
+                .bottom
+                    .bookmark
+                        display: none
+                        +sm 
+                            +flex 
+                            +flex-just(end)
+                            +flex-align(center)
+                    .star-rating
+                        &::before,&::after 
+                            background-color: $white
+                    .entry-meta
+                        p,span,a
+                            color: $white
+    .navigation.pagination
+        .nav-links
+            +flex-just(center)
+        

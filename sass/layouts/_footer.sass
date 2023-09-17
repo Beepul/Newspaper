@@ -1,0 +1,159 @@
+.site-footer
+    background-color: var(--news-primary-color)
+    padding: $s-60 0
+    span,p,a,h5
+        color: $text-tertiary
+    .wp-block-heading
+        margin-bottom: $s-16
+    .widget-title, .wpforms-title
+        @extend .wp-block-heading
+    .wp-block-heading::after
+        display: none
+    .footer-search
+       @extend .search_hr_form
+
+    .footer-top
+        @extend %border-btm
+        padding-bottom: $s-60
+        .wp-block-popular-posts__list, .wp-block-popular-posts
+            +flex 
+            +flex-dir(column)
+            gap: $s-16
+            li
+                +flex 
+                +flex-dir(column)
+                gap: 4px
+                &:hover
+                    a
+                        opacity: 0.8
+                span
+                    font-size: $s-12
+                    text-transform: capitalize
+                a
+                    @extend %bold 
+                    font-size: $font-14
+        .widget.widget_nav_menu
+            ul 
+                +flex 
+                +flex-dir(column)
+                gap: $s-16 
+                li 
+                    &:hover
+                        a 
+                            padding-left: $s-8  
+                    a
+                        padding: 0
+                        width: 100%
+                        display: block
+            .menu-contact-container
+                ul 
+                    li 
+                        a
+                            +flex 
+                            +flex-align(center)
+                            gap: $s-8 
+                            span
+                                @extend %display-center
+        .footer-newsletter
+            @extend .newsletter_form
+        .payment-container
+            .wp-block-group__inner-container 
+                .safetrans
+                    +flex 
+                    +flex-align(center)
+                    +flex-just(space-between)
+                    img
+                        width: 70px
+                        object-fit: cover
+        .download-container
+            .wp-block-group__inner-container 
+                .wp-block-group__inner-container
+                    +flex 
+                    +flex-align(center)
+                    +flex-just(center)
+                    gap: $s-28
+
+    .footer-bottom
+        .footer-bottom-menu
+            ul 
+                @extend %display-center
+                gap: $s-24
+                padding: $s-24 0
+                flex-wrap: wrap
+                a 
+                    &:hover
+                        opacity: 0.8
+        .footer-bottom-copry-right
+            background: #284065
+            padding:  $s-24
+            .wp-block-group
+                +flex 
+                +flex-align(center)
+                +flex-just(space-between)
+                gap: $s-12
+                +flex-dir(column)
+                +md 
+                    +flex-dir(row)
+            .wp-block-group__inner-container
+                +flex
+                +flex-align(center)
+                +flex-dir(column)
+                gap: $s-12
+                min-width: 80%
+                +md 
+                    +flex-dir(row)
+                    gap: $s-24
+                    min-width: 70%
+
+                .wp-block-image
+                    img
+                        max-width: 260px
+                .site-info
+                    border-left: 1px solid $text-tertiary
+                    padding: $s-8
+                    text-align: center
+                    +md 
+                        text-align: start
+                        padding: 10px $s-24
+
+            ul, .wp-block-social-links
+                +flex 
+                +flex-align(center)
+                gap: $s-16
+                width: 100%
+                +flex-just(center)
+                +md 
+                    +flex-just(end)
+
+                .wp-social-link
+                    width: auto !important
+                    background-color: transparent
+                    a 
+                        height: 28px 
+                        width: 28px 
+                        +radius(50%)
+                        @extend %display-center
+                .wp-social-link-facebook
+                    a 
+                        background-color: $fb-color
+                        &:hover
+                            background-color: $fb-color-100
+                .wp-social-link-instagram
+                    a 
+                        background-color: $insta-color
+                        &:hover
+                            background-color: $insta-color-100
+                .wp-social-link-linkedin
+                    a
+                        background-color: $ln-color
+                        &:hover
+                            background-color: $ln-color-100
+                .wp-social-link-pinterest
+                    a 
+                        background-color: $pin-color
+                        &:hover
+                            background-color: $pin-color-100
+
+
+
+
